@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IASD Campo Grande - 12/07/2025 (Moderno)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0d0d1a;
+      --card-bg-color: rgba(20, 20, 40, 0.6);
+      --text-color: #e0e0e0;
+      --accent-color: #00ffff;
+      --border-color: rgba(0, 255, 255, 0.2);
+      --font-primary: 'Inter', sans-serif;
+      --font-mono: 'Roboto Mono', monospace;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--bg-color);
+      background-image: radial-gradient(circle at 15% 25%, rgba(0, 255, 255, 0.1), transparent 50%), radial-gradient(circle at 85% 75%, rgba(120, 0, 255, 0.1), transparent 50%);
+      color: var(--text-color);
+      font-family: var(--font-primary);
+      padding: 1.5rem 1rem;
+      min-height: 100vh;
+      font-size: 16px;
+    }
+    .main-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .glass-card {
+      background: var(--card-bg-color);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px;
+    }
+    .header-card {
+      text-align: center;
+      border: none;
+      background: none;
+      backdrop-filter: none;
+      padding: 1rem 0;
+    }
+    .header-card h1 {
+      font-family: var(--font-mono);
+      color: #fff;
+      font-size: 1.8em;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+    .header-card p {
+      font-family: var(--font-mono);
+      color: var(--accent-color);
+      font-size: 1em;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+    .section-title {
+      font-family: var(--font-mono);
+      color: var(--accent-color);
+      margin: 0 0 1.5rem 0;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-align: left;
+    }
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .event-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .event-time {
+      font-family: var(--font-mono);
+      color: var(--accent-color);
+      font-size: 1em;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .event-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .event-details {
+      font-size: 1em;
+      font-weight: 500;
+      color: #fff;
+    }
+    .event-details .person {
+      opacity: 0.7;
+      font-style: italic;
+      margin-left: 0.25rem;
+    }
+    .event-notes {
+      font-size: 0.9em;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+      padding-left: 0.75rem;
+      border-left: 2px solid var(--accent-color);
+      white-space: pre-line;
+      line-height: 1.5;
+    }
+    .teams-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .team {
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .team h4 {
+      font-family: var(--font-mono);
+      margin: 0 0 0.5rem 0;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+    .team p {
+      margin: 0;
+      opacity: 0.8;
+      font-size: 0.9em;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+    @media (min-width: 600px) {
+      .teams-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 768px) {
+      body {
+        padding: 2rem;
+      }
+      .glass-card {
+        padding: 2rem;
+      }
+      .header-card h1 {
+        font-size: 2.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="main-container">
+    <header class="header-card">
+      <h1>IASD Campo Grande</h1>
+      <p>12 de Julho de 2025</p>
+    </header>
+
+    <section class="glass-card">
+      <h2 class="section-title">Escola Sabatina</h2>
+      <div class="event-list">
+        <div class="event-item"><strong class="event-time">08:00</strong><div class="event-content"><span class="event-details">Dejejum</span></div></div>
+        <div class="event-item"><strong class="event-time">08:20</strong><div class="event-content"><span class="event-details">Introdução</span></div></div>
+        <div class="event-item"><strong class="event-time">09:00</strong><div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Railda)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">09:01</strong><div class="event-content"><span class="event-details">Louvores <span class="person">(Elias / Railda)</span></span><span class="event-notes">1 - (187 HA) Refúgio em Temporal
+2 - (227 HA) Se Cristo for Comigo</span></div></div>
+        <div class="event-item"><strong class="event-time">09:12</strong><div class="event-content"><span class="event-details">Informativo Mundial das Missões <span class="person">(Vídeo)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">09:15</strong><div class="event-content"><span class="event-details">Introdução da Lição <span class="person">(Elisângela)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">09:17</strong><div class="event-content"><span class="event-details">Oração pelos Professores <span class="person">(Elisângela)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:15</strong><div class="event-content"><span class="event-details">Encerramento da Lição</span></div></div>
+        <div class="event-item"><strong class="event-time">10:20</strong><div class="event-content"><span class="event-details">Leitura da Ata</span></div></div>
+      </div>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="section-title">Culto Divino</h2>
+      <div class="event-list">
+        <div class="event-item"><strong class="event-time">10:25</strong><div class="event-content"><span class="event-details">Anúncios <span class="person">(Pedro e Renata)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:30</strong><div class="event-content"><span class="event-details">Adoração Infantil <span class="person">(Elisângela)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:40</strong><div class="event-content"><span class="event-details">Momento de Entrega</span><span class="event-notes">Ofertório: João Marcos
+Música: Ele é Exaltado
+Oração Intercessora: Evanildo
+Música: Toque em minhas mãos
+Música: Santo somente é o Senhor</span></div></div>
+        <div class="event-item"><strong class="event-time">11:10</strong><div class="event-content"><span class="event-details">Mensagem <span class="person">(Pr. Robson Menezes)</span></span><span class="event-notes">Tema: Intimidade que vira identidade</span></div></div>
+        <div class="event-item"><strong class="event-time">11:55</strong><div class="event-content"><span class="event-details">Orientações para a Saída</span></div></div>
+      </div>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="section-title">Equipes de Plantão</h2>
+      <div class="teams-grid">
+        <div class="team"><h4>Ancionato</h4><p>Anderson Gaspar</p></div>
+        <div class="team"><h4>Recepção</h4><p>Nely, Wiltney e Aline</p></div>
+        <div class="team"><h4>Diaconisas</h4><p>Vera Lúcia, Elena e Céia</p></div>
+        <div class="team"><h4>Diáconos</h4><p>Eduardo Santos, Ismael Levy, Mauro Trentino, Romilson, Marcelo Maravilha (Coordenador)</p></div>
+        <div class="team"><h4>Louvor</h4><p>Patrícia - Soprano (Ministração)
+Emanuely - Soprano
+Estéfani - Contralto
+Beatriz - Contralto</p></div>
+        <div class="team"><h4>Banda</h4><p>Piano - Victor
+Bateria - Josué
+Violão - Henrique</p></div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
