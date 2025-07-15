@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congresso Face Jovem - Adventistas Campo Grande</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-custom-gradient {
+            background: linear-gradient(180deg, #0a192f 0%, #172a46 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(255, 165, 0, 0.7), 0 0 10px rgba(255, 165, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-custom-gradient text-gray-200 antialiased">
+
+    <!-- Main Container -->
+    <div class="container mx-auto max-w-3xl p-4 md:p-8">
+
+        <header class="text-center mb-6">
+            <h2 class="text-lg font-semibold text-orange-400 tracking-wider">ADVENTISTAS CAMPO GRANDE</h2>
+            <p class="text-sm text-gray-400">NOTÍCIA</p>
+        </header>
+
+        <main class="bg-[#172a46] rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Event Image -->
+            <div class="w-full">
+                <img src="https://iili.io/FWrDyTx.jpg" alt="Banner do Congresso Face Jovem" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/0a192f/FFA500?text=Congresso+Jovem';">
+            </div>
+
+            <div class="p-6 md:p-10">
+                <!-- Event Title -->
+                <h1 class="text-3xl md:text-4xl font-black text-center text-white uppercase tracking-wide mb-6">
+                    Congresso Face Jovem
+                </h1>
+
+                <!-- Countdown Section -->
+                <div class="bg-orange-500/10 border border-orange-400/50 rounded-xl text-center p-4 mb-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-orange-400 text-glow animate-pulse">
+                        🔥 FALTAM 5 DIAS PARA O CONGRESSO JOVEM 🔥
+                    </h3>
+                    <p class="text-gray-300 mt-2">Uma experiência de fé, comunhão e avivamento te espera!</p>
+                </div>
+
+                <!-- Invitation Text -->
+                <div class="text-base md:text-lg text-gray-300 space-y-4 mb-8 text-left md:text-center">
+                    <p>Convidamos toda a igreja, todos os jovens e irmãos em Cristo para esses dias especiais de edificação.</p>
+                    <p class="font-bold">Ninguém pode ficar de fora!</p>
+                </div>
+
+                <!-- Bible Verse Section -->
+                <div class="bg-gray-800/50 rounded-lg p-6 mb-8 border-l-4 border-orange-400">
+                    <blockquote class="italic text-gray-300">
+                        <p class="mb-2">“Ora, a fé é a certeza daquilo que esperamos e a prova das coisas que não vemos.”</p>
+                        <cite class="not-italic font-semibold text-orange-300">— Hebreus 11:1</cite>
+                    </blockquote>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center space-y-4 mb-8">
+                     <p class="text-xl font-bold text-white">Prepare seu coração, avise todo mundo e venha viver algo inesquecível com Deus!</p>
+                </div>
+
+                <!-- Share Button -->
+                <div class="text-center">
+                    <button id="shareButton" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-share-alt mr-2"></i> Compartilhe!
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-8">
+            <p class="text-gray-500 text-sm">&copy; 2024 Igreja Adventista do Sétimo Dia - Campo Grande</p>
+        </footer>
+
+    </div>
+    
+    <!-- Modal de Compartilhamento -->
+    <div id="shareModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-[#172a46] rounded-2xl shadow-2xl p-6 w-full max-w-sm text-center relative">
+            <button id="closeModal" class="absolute top-2 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <h3 class="text-xl font-bold text-white mb-4">Compartilhar Evento</h3>
+            <p class="text-gray-300 mb-6">Copie o link ou use as opções abaixo para compartilhar com seus amigos e familiares.</p>
+            <div class="flex items-center border border-gray-600 rounded-lg p-2 mb-4">
+                <input id="shareLink" type="text" value="https://seusite.com/evento-jovem" class="bg-transparent text-gray-300 w-full focus:outline-none" readonly>
+                <button id="copyButton" class="bg-orange-500 text-white px-4 py-1 rounded-md ml-2 hover:bg-orange-600">Copiar</button>
+            </div>
+            <p id="copyFeedback" class="text-green-400 h-5"></p>
+        </div>
+    </div>
+
+    <script>
+        // Lógica para o Modal de Compartilhamento
+        const shareButton = document.getElementById('shareButton');
+        const shareModal = document.getElementById('shareModal');
+        const closeModal = document.getElementById('closeModal');
+        const copyButton = document.getElementById('copyButton');
+        const shareLinkInput = document.getElementById('shareLink');
+        const copyFeedback = document.getElementById('copyFeedback');
+
+        // Atualiza o link de compartilhamento para a URL atual
+        shareLinkInput.value = window.location.href;
+
+        shareButton.addEventListener('click', () => {
+            shareModal.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', () => {
+            shareModal.classList.add('hidden');
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === shareModal) {
+                shareModal.classList.add('hidden');
+            }
+        });
+
+        copyButton.addEventListener('click', () => {
+            // Técnica de cópia para a área de transferência compatível com iframes
+            const textarea = document.createElement('textarea');
+            textarea.value = shareLinkInput.value;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                copyFeedback.textContent = 'Link copiado!';
+            } catch (err) {
+                copyFeedback.textContent = 'Falha ao copiar.';
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            document.body.removeChild(textarea);
+
+            setTimeout(() => {
+                copyFeedback.textContent = '';
+            }, 2000);
+        });
+    </script>
+
+</body>
+</html>
