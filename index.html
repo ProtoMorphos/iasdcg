@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Congresso Jovem IASD - 19/07/2025</title>
+  <title>IASD Campo Grande - 26/07/2025 (Moderno)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* 1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS */
     :root {
       --bg-color: #0d0d1a;
       --card-bg-color: rgba(20, 20, 40, 0.6);
@@ -35,7 +34,6 @@
       font-size: 16px;
     }
 
-    /* 2. LAYOUT PRINCIPAL */
     .main-container {
       max-width: 800px;
       margin: 0 auto;
@@ -53,7 +51,6 @@
       border-radius: 16px;
     }
 
-    /* 3. CABEÇALHO */
     .header-card {
       text-align: center;
       border: none;
@@ -70,22 +67,15 @@
       letter-spacing: 3px;
       font-weight: 700;
     }
-    
-    .header-card .subtitle {
-      color: var(--text-color);
-      font-size: 1.1em;
-      margin-top: 0.25rem;
-    }
 
-    .header-card .date {
+    .header-card p {
       font-family: var(--font-mono);
       color: var(--accent-color);
       font-size: 1em;
-      margin-top: 0.75rem;
+      margin-top: 0.5rem;
       opacity: 0.9;
     }
 
-    /* 4. SEÇÕES E TÍTULOS */
     .section-title {
       font-family: var(--font-mono);
       color: var(--accent-color);
@@ -95,18 +85,6 @@
       letter-spacing: 1.5px;
       font-weight: 700;
       text-align: left;
-    }
-
-    /* 5. LAYOUT DA LISTA DE EVENTOS (TIMELINE) */
-    .broadcast-start {
-        text-align: center;
-        font-family: var(--font-mono);
-        color: var(--accent-color);
-        padding: 0.75rem;
-        border: 1px dashed var(--accent-color);
-        border-radius: 8px;
-        margin-bottom: 1.5rem;
-        letter-spacing: 1px;
     }
 
     .event-list {
@@ -134,7 +112,7 @@
       flex-direction: column;
       gap: 0.3rem;
     }
-    
+
     .event-details {
       font-size: 1em;
       font-weight: 500;
@@ -157,13 +135,12 @@
       line-height: 1.5;
     }
 
-    /* 6. LAYOUT DAS EQUIPES */
     .teams-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
     }
-    
+
     .team {
       background-color: rgba(0, 0, 0, 0.2);
       padding: 1rem;
@@ -187,13 +164,12 @@
       white-space: pre-line;
     }
 
-    /* 7. DESIGN RESPONSIVO PARA TELAS MAIORES */
     @media (min-width: 600px) {
       .teams-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    
+
     @media (min-width: 768px) {
       body {
         padding: 2rem;
@@ -202,160 +178,67 @@
       .glass-card {
         padding: 2rem;
       }
-      
+
       .header-card h1 {
         font-size: 2.2em;
       }
     }
-
   </style>
 </head>
 <body>
   <main class="main-container">
-
     <header class="header-card">
-      <h1>Congresso Jovem</h1>
-      <p class="subtitle">IASD Campo Grande</p>
-      <p class="date">19 de Julho de 2025</p>
+      <h1>IASD Campo Grande</h1>
+      <p>26 de Julho de 2025</p>
     </header>
 
     <section class="glass-card">
       <h2 class="section-title">Escola Sabatina</h2>
       <div class="event-list">
-        <div class="event-item">
-          <strong class="event-time">08:00</strong>
-          <div class="event-content"><span class="event-details">Dejejum (até 08:15)</span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">08:20</strong>
-          <div class="event-content"><span class="event-details">Classe dos Professores (até 08:50)</span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:00</strong>
-          <div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Railda)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:05</strong>
-          <div class="event-content">
-            <span class="event-details">Louvores <span class="person">(Railda e Elias)</span></span>
-            <span class="event-notes">Sublime Amor (16 HA)
-Grande é o Senhor (20 HA)</span>
-          </div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:12</strong>
-          <div class="event-content"><span class="event-details">Informativo Mundial das Missões <span class="person">(Vídeo)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:15</strong>
-          <div class="event-content"><span class="event-details">Introdução da Lição <span class="person">(Sidnei)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:17</strong>
-          <div class="event-content"><span class="event-details">Oração pelos Professores <span class="person">(Sidnei)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">10:15</strong>
-          <div class="event-content"><span class="event-details">Encerramento da Lição</span></div>
-        </div>
+        <div class="event-item"><strong class="event-time">08:00</strong><div class="event-content"><span class="event-details">Desjejum</span></div></div>
+        <div class="event-item"><strong class="event-time">08:20</strong><div class="event-content"><span class="event-details">Classe dos Professores</span></div></div>
+        <div class="event-item"><strong class="event-time">09:00</strong><div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Fernando)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">09:05</strong><div class="event-content"><span class="event-details">Louvores <span class="person">(Elias e Fernando)</span></span><span class="event-notes">1 - Mágoas (341 HA)
+2 - Queremos dar louvor (391 HA)</span></div></div>
+        <div class="event-item"><strong class="event-time">09:12</strong><div class="event-content"><span class="event-details">Informativo Mundial das Missões <span class="person">(Vídeo)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">09:15</strong><div class="event-content"><span class="event-details">Introdução da Lição <span class="person">(Márcio Brandão)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">09:17</strong><div class="event-content"><span class="event-details">Oração pelos Professores <span class="person">(Márcio Brandão)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:15</strong><div class="event-content"><span class="event-details">Encerramento da Lição</span></div></div>
       </div>
     </section>
 
     <section class="glass-card">
       <h2 class="section-title">Culto Divino</h2>
-      <div class="broadcast-start">INÍCIO DA TRANSMISSÃO</div>
       <div class="event-list">
-        <div class="event-item">
-          <strong class="event-time">10:15</strong>
-          <div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Deivison)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">10:20</strong>
-          <div class="event-content"><span class="event-details">Anúncios <span class="person">(Luiz Felipe, Ludimila e Daniel)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">10:25</strong>
-          <div class="event-content"><span class="event-details">Adoração Infantil <span class="person">(Renata)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">10:35</strong>
-          <div class="event-content"><span class="event-details">Música Especial <span class="person">(Trio Vocal)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">10:45</strong>
-          <div class="event-content">
-            <span class="event-details">Momento de Entrega</span>
-            <span class="event-notes">Minuto Jovem (Ofertório): Tárcio e Ludimila
-Louvor Congregacional: Sonda-me
-Oração Intercessora: Nicolas Postiga
-Louvor Congregacional 2: Intensamente - Adoradores 5
-Louvor Congregacional 3: A única esperança - Força Jovem</span>
-          </div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">11:15</strong>
-          <div class="event-content">
-            <span class="event-details">Mensagem <span class="person">(Pastor Pedro Soldaini)</span></span>
-          </div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">11:55</strong>
-           <div class="event-content"><span class="event-details">Música Especial <span class="person">(Trio Vocal)</span></span></div>
-        </div>
-        <div class="event-item">
-            <strong class="event-time">12:00</strong>
-            <div class="event-content">
-                <span class="event-details">Encerramento</span>
-                <span class="event-notes">Oração Final
-Orientações de saída pelo Ancionato: Luis Silva</span>
-            </div>
-        </div>
+        <div class="event-item"><strong class="event-time">10:15</strong><div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Sidnei)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:20</strong><div class="event-content"><span class="event-details">Anúncios <span class="person">(Gabriel Brito e Levi)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:25</strong><div class="event-content"><span class="event-details">Adoração Infantil <span class="person">(Giulia)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:35</strong><div class="event-content"><span class="event-details">Momento de Entrega</span><span class="event-notes">Ofertório: Márcia Aparecida
+Louvor: Ele é exaltado
+Oração Intercessora: Eliane
+Louvor: Falar com Deus
+Louvor: Entrega</span></div></div>
+        <div class="event-item"><strong class="event-time">11:05</strong><div class="event-content"><span class="event-details">Mensagem <span class="person">(Evanildo Andrade)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">11:55</strong><div class="event-content"><span class="event-details">Encerramento / Oração Final</span></div></div>
+        <div class="event-item"><strong class="event-time">12:00</strong><div class="event-content"><span class="event-details">Orientações de Saída <span class="person">(Sidnei)</span></span></div></div>
       </div>
     </section>
 
     <section class="glass-card">
       <h2 class="section-title">Equipes de Plantão</h2>
       <div class="teams-grid">
-        <div class="team">
-          <h4>Anciãos</h4>
-          <p>Marcio e Luis Silva</p>
-        </div>
-        <div class="team">
-          <h4>Recepção</h4>
-          <p>Gabriel, Alline, Cátia, Silene e Glaucia</p>
-        </div>
-         <div class="team">
-          <h4>Diáconos</h4>
-          <p>Gilmar Dias (Coordenador)
-Leandro Pereira
-William Rezende
-Abelardo Pereira</p>
-        </div>
-        <div class="team">
-          <h4>Diaconisas</h4>
-          <p>Judite, Marta e Eunice</p>
-        </div>
-        <div class="team">
-          <h4>Vocal</h4>
-          <p>Nathan (tenor)
-Laysa (soprano)
-Joelma (contralto)
-Luiz Felipe (baixo)</p>
-        </div>
-        <div class="team">
-          <h4>Banda</h4>
-          <p>Pr Pedro (piano)
-Luan (bateria)
-Evanildo (Contrabaixo)
-Henrique (violão)</p>
-        </div>
-         <div class="team">
-          <h4>Sonoplastia e Transmissão</h4>
-          <p>Mesa de som - Rafael
-PC - Davi
-Transmissão - Letícia
-Câmeras - Renato</p>
-        </div>
+        <div class="team"><h4>Anciãos</h4><p>Sidnei Trindade e Evanildo Andrade</p></div>
+        <div class="team"><h4>Recepção</h4><p>Natanael, Renata Seixas e Lizete</p></div>
+        <div class="team"><h4>Diáconos</h4><p>Witnei (Coordenador), Manoel Alves, Marcelo Martins, Ronilson Rodrigues</p></div>
+        <div class="team"><h4>Diaconisas</h4><p>Zilda, Mirian, Eunice</p></div>
+        <div class="team"><h4>Vocal</h4><p>Silvinha, Marcelo, Laysa e Giulia</p></div>
+        <div class="team"><h4>Banda</h4><p>Piano - Elisama
+Bateria - Nathan
+Violão - Daniel</p></div>
+        <div class="team"><h4>Sonoplastia e Transmissão</h4><p>Mesa de som - Rafael
+PC - Nicolas
+Transmissão - Renan Barreto
+Câmeras - Letícia Borges</p></div>
       </div>
     </section>
 
