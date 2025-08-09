@@ -1,90 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IASD Campo Grande - 09/08/2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  body { background: #0d0d1a; color: #e0e0e0; font-family: 'Inter', sans-serif; padding: 1rem; }
-  .main-container { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 2rem; }
-  .glass-card { background: rgba(20, 20, 40, 0.6); border: 1px solid rgba(0, 255, 255, 0.2); padding: 1.5rem; border-radius: 16px; backdrop-filter: blur(20px); }
-  .header-card { text-align: center; }
-  .header-card h1 { font-family: 'Roboto Mono', monospace; font-size: 1.8em; color: #fff; text-transform: uppercase; }
-  .header-card p { color: #00ffff; font-family: 'Roboto Mono', monospace; }
-  .section-title { font-family: 'Roboto Mono', monospace; color: #00ffff; text-transform: uppercase; margin-bottom: 1rem; }
-  .event-item { margin-bottom: 1rem; }
-  .event-time { font-family: 'Roboto Mono', monospace; color: #00ffff; font-weight: bold; }
-  .event-details { color: #fff; font-weight: 500; }
-  .event-notes { font-size: 0.9em; opacity: 0.8; margin-top: 0.3rem; white-space: pre-line; }
-  .teams-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-  .team h4 { font-family: 'Roboto Mono', monospace; color: #fff; margin-bottom: 0.5rem; }
-  .team p { font-size: 0.9em; opacity: 0.8; white-space: pre-line; }
-  @media(min-width:600px) { .teams-grid { grid-template-columns: repeat(2,1fr); } }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IASD Campo Grande - 09/08/2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0d0d1a;
+      --card-bg-color: rgba(20, 20, 40, 0.6);
+      --text-color: #e0e0e0;
+      --accent-color: #00ffff;
+      --border-color: rgba(0, 255, 255, 0.2);
+      --font-primary: 'Inter', sans-serif;
+      --font-mono: 'Roboto Mono', monospace;
+    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {background-color: var(--bg-color); background-image: radial-gradient(circle at 15% 25%, rgba(0, 255, 255, 0.1), transparent 50%), radial-gradient(circle at 85% 75%, rgba(120, 0, 255, 0.1), transparent 50%); color: var(--text-color); font-family: var(--font-primary); padding: 1.5rem 1rem; min-height: 100vh; font-size: 16px;}
+    .main-container {max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;}
+    .glass-card {background: var(--card-bg-color); border: 1px solid var(--border-color); padding: 1.5rem; backdrop-filter: blur(20px); border-radius: 16px;}
+    .header-card {text-align: center; background: none; padding: 1rem 0;}
+    .header-card h1 {font-family: var(--font-mono); color: #fff; font-size: 1.8em; text-transform: uppercase; letter-spacing: 3px; font-weight: 700;}
+    .header-card p {font-family: var(--font-mono); color: var(--accent-color); font-size: 1em; margin-top: 0.5rem; opacity: 0.9;}
+    .section-title {font-family: var(--font-mono); color: var(--accent-color); margin: 0 0 1.5rem 0; font-size: 1.2em; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; text-align: left;}
+    .event-list {display: flex; flex-direction: column; gap: 1.5rem;}
+    .event-item {display: flex; gap: 1.25rem; align-items: flex-start;}
+    .event-time {font-family: var(--font-mono); color: var(--accent-color); font-size: 1em; font-weight: 700; flex-shrink: 0;}
+    .event-content {display: flex; flex-direction: column; gap: 0.3rem;}
+    .event-details {font-size: 1em; font-weight: 500; color: #fff;}
+    .event-details .person {opacity: 0.7; font-style: italic; margin-left: 0.25rem;}
+    .event-notes {font-size: 0.9em; opacity: 0.8; margin-top: 0.5rem; padding-left: 0.75rem; border-left: 2px solid var(--accent-color); white-space: pre-line; line-height: 1.5;}
+    .teams-grid {display: grid; grid-template-columns: 1fr; gap: 1rem;}
+    .team {background-color: rgba(0, 0, 0, 0.2); padding: 1rem; border-radius: 8px;}
+    .team h4 {font-family: var(--font-mono); margin: 0 0 0.5rem 0; text-transform: uppercase; color: #fff; font-size: 1em; letter-spacing: 1px;}
+    .team p {margin: 0; opacity: 0.8; font-size: 0.9em; line-height: 1.6; white-space: pre-line;}
+    @media (min-width: 600px) {.teams-grid {grid-template-columns: repeat(2, 1fr);}}
+    @media (min-width: 768px) {body {padding: 2rem;} .glass-card {padding: 2rem;} .header-card h1 {font-size: 2.2em;}}
+  </style>
 </head>
 <body>
-<main class="main-container">
-<header class="header-card">
-  <h1>IASD Campo Grande</h1>
-  <p>09 de Agosto de 2025</p>
-</header>
-<section class="glass-card">
-  <h2 class="section-title">Escola Sabatina</h2>
-  <div class="event-item"><span class="event-time">08:00</span> <span class="event-details">Desjejum</span></div>
-  <div class="event-item"><span class="event-time">08:20</span> <span class="event-details">Classe dos Professores</span></div>
-  <div class="event-item"><span class="event-time">09:00</span> <span class="event-details">Boas-vindas / Oração (Railda)</span></div>
-  <div class="event-item"><span class="event-time">09:05</span> <span class="event-details">Louvores (Elias / Railda)</span>
-    <div class="event-notes">(186 HA) Mestre o mar se revolta
-(214 HA) Não há o que temer</div>
-  </div>
-  <div class="event-item"><span class="event-time">09:12</span> <span class="event-details">Informativo Mundial das Missões (Vídeo)</span></div>
-  <div class="event-item"><span class="event-time">09:17</span> <span class="event-details">Oração pelos Professores (David)</span></div>
-  <div class="event-item"><span class="event-time">10:15</span> <span class="event-details">Encerramento da Lição</span></div>
-</section>
-<section class="glass-card">
-  <h2 class="section-title">Culto Divino</h2>
-  <div class="event-item"><span class="event-time">10:20</span> <span class="event-details">Boas-vindas / Oração (Luis Fernando Maia)</span></div>
-  <div class="event-item"><span class="event-time">10:20</span> <span class="event-details">Anúncios (Ana Cassimiro / Isabelle)</span></div>
-  <div class="event-item"><span class="event-time">10:25</span> <span class="event-details">Adoração Infantil (Flávia)</span></div>
-  <div class="event-item"><span class="event-time">10:35</span> <span class="event-details">Coral de Crianças / Homenagem ao Dia dos Pais</span></div>
-  <div class="event-item"><span class="event-time">10:45</span> <span class="event-details">Momento de Entrega</span>
-    <div class="event-notes">Ofertório: David
-Louvor: Ele vem (Adoradores 2)
-Oração Intercessora: Vitor Bruno
-Louvor: Não há o que temer (Adoradores 1)
-Louvor: Santo Espírito (Adoradores 5)</div>
-  </div>
-  <div class="event-item"><span class="event-time">11:15</span> <span class="event-details">Mensagem (Leonardo Amorim)</span></div>
-  <div class="event-item"><span class="event-time">11:55</span> <span class="event-details">Música de Apelo (Paula Vanessa)</span></div>
-  <div class="event-item"><span class="event-time">12:05</span> <span class="event-details">Encerramento / Oração pelo Pregador</span></div>
-  <div class="event-item"><span class="event-time">12:10</span> <span class="event-details">Orientações de Saída (Fernando)</span></div>
-</section>
-<section class="glass-card">
-  <h2 class="section-title">Equipes de Plantão</h2>
-  <div class="teams-grid">
-    <div class="team"><h4>Anciãos</h4><p>Luis Fernando Maia, Vitor Bruno</p></div>
-    <div class="team"><h4>Recepção</h4><p>Glaucia
-Cátia Silene
-Witney</p></div>
-    <div class="team"><h4>Louvor</h4><p>Giulia, Nathalia, Ana Luiza, Beatriz, Emanuely, Natan</p></div>
-    <div class="team"><h4>Banda</h4><p>Piano - Rafael
-Bateria - Josué
-Violão - Henrique</p></div>
-    <div class="team"><h4>Diáconos</h4><p>Jorge Veríssimo (Coordenador)
-Marcos Roberto
-Ismael Levi
-Mauro Trentino
-Romilson</p></div>
-    <div class="team"><h4>Diaconisas</h4><p>Rosa Maravilha
-Judite
-Céia</p></div>
-    <div class="team"><h4>Sonoplastia e Transmissão</h4><p>🎛️ Mesa de som - Rafael
-💻 PC - Breno
-🛜 Transmissão - Renato
-📹 Câmeras - Gustavo</p></div>
-  </div>
-</section>
-</main>
+  <main class="main-container">
+    <header class="header-card">
+      <h1>IASD Campo Grande</h1>
+      <p>09 de Agosto de 2025</p>
+    </header>
+
+    <section class="glass-card">
+      <h2 class="section-title">Escola Sabatina</h2>
+      <div class="event-list">
+        <div class="event-item"><strong class="event-time">08:00</strong><div class="event-content"><span class="event-details">Desjejum</span></div></div>
+        <div class="event-item"><strong class="event-time">08:20</strong><div class="event-content"><span class="event-details">Classe dos Professores</span></div></div>
+        <div class="event-item"><strong class="event-time">09:00</strong><div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Railda)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">09:05</strong><div class="event-content"><span class="event-details">Louvores <span class="person">(Elias / Railda)</span></span><span class="event-notes">1 - (186 HA) Mestre, o mar se revolta\n2 - (214 HA) Não há o que temer</span></div></div>
+        <div class="event-item"><strong class="event-time">09:12</strong><div class="event-content"><span class="event-details">Informativo Mundial das Missões <span class="person">(Vídeo)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">09:17</strong><div class="event-content"><span class="event-details">Oração pelos Professores <span class="person">(David)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:15</strong><div class="event-content"><span class="event-details">Encerramento da Lição</span></div></div>
+      </div>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="section-title">Culto Divino</h2>
+      <div class="event-list">
+        <div class="event-item"><strong class="event-time">10:20</strong><div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Luis Fernando Maia)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:25</strong><div class="event-content"><span class="event-details">Anúncios <span class="person">(Ana Cassimiro / Isabelle)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:35</strong><div class="event-content"><span class="event-details">Adoração Infantil <span class="person">(Flávia)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">10:35</strong><div class="event-content"><span class="event-details">Coral de Crianças / Homenagem ao Dia dos Pais</span></div></div>
+        <div class="event-item"><strong class="event-time">10:45</strong><div class="event-content"><span class="event-details">Momento de Entrega</span><span class="event-notes">Ofertório: David\nLouvor: Ele vem (Adoradores 2)\nOração Intercessora: Vitor Bruno\nLouvor: Não há o que temer (Adoradores 1)\nLouvor: Santo Espírito (Adoradores 5)</span></div></div>
+        <div class="event-item"><strong class="event-time">11:15</strong><div class="event-content"><span class="event-details">Mensagem <span class="person">(Leonardo Amorim)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">11:55</strong><div class="event-content"><span class="event-details">Música de Apelo <span class="person">(Paula Vanessa)</span></span></div></div>
+        <div class="event-item"><strong class="event-time">12:05</strong><div class="event-content"><span class="event-details">Encerramento / Oração pelo Pregador</span></div></div>
+        <div class="event-item"><strong class="event-time">12:10</strong><div class="event-content"><span class="event-details">Orientações de Saída <span class="person">(Fernando)</span></span></div></div>
+      </div>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="section-title">Equipes de Plantão</h2>
+      <div class="teams-grid">
+        <div class="team"><h4>Anciãos</h4><p>Luis Fernando Maia, Vitor Bruno</p></div>
+        <div class="team"><h4>Recepção</h4><p>Glaucia, Cátia Silene, Witney</p></div>
+        <div class="team"><h4>Louvor</h4><p>Giulia, Nathalia, Ana Luiza, Beatriz, Emanuely, Natan</p></div>
+        <div class="team"><h4>Banda</h4><p>Piano - Rafael\nBateria - Josué\nViolão - Henrique</p></div>
+        <div class="team"><h4>Diáconos</h4><p>Jorge Veríssimo (Coordenador), Marcos Roberto, Ismael Levi, Mauro Trentino, Romilson</p></div>
+        <div class="team"><h4>Diaconisas</h4><p>Rosa Maravilha, Judite, Céia</p></div>
+        <div class="team"><h4>Sonoplastia e Transmissão</h4><p>🎛️ Mesa de som - Rafael\n💻 PC - Breno\n🛜 Transmissão - Renato\n📹 Câmeras - Gustavo</p></div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
