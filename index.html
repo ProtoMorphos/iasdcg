@@ -44,6 +44,33 @@ body {
 .team h4 {font-family: var(--font-mono); margin-bottom: 0.5rem; text-transform: uppercase; color: #fff; font-size: 1em;}
 .team p {margin: 0; opacity: 0.8; font-size: 0.9em; line-height: 1.6; white-space: pre-line;}
 @media (min-width: 600px) {.teams-grid {grid-template-columns: repeat(2, 1fr);}}
+  /* --- Botão Culto ao Vivo --- */
+        .btn-live {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            margin-bottom: 40px;
+            padding: 12px 24px;
+            background-color: #c4302b; /* Cor oficial do YouTube */
+            color: var(--cor-texto-claro);
+            text-decoration: none;
+            font-family: var(--fonte-titulos);
+            font-weight: 700;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-live:hover {
+            background-color: #a32722; /* Tom mais escuro do vermelho */
+            transform: translateY(-2px);
+        }
+
+        .btn-live svg {
+            width: 24px;
+            height: 24px;
+            fill:
 </style>
 </head>
 <body>
