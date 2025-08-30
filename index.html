@@ -1,121 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IASD Campo Grande - 23/08/2025</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #0d0d1a;
-      --card-bg-color: rgba(20, 20, 40, 0.6);
-      --text-color: #e0e0e0;
-      --accent-color: #00ffff;
-      --border-color: rgba(0, 255, 255, 0.2);
-      --font-primary: 'Inter', sans-serif;
-      --font-mono: 'Roboto Mono', monospace;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--bg-color);
-      background-image: radial-gradient(circle at 15% 25%, rgba(0,255,255,0.1), transparent 50%), radial-gradient(circle at 85% 75%, rgba(120,0,255,0.1), transparent 50%);
-      color: var(--text-color);
-      font-family: var(--font-primary);
-      padding: 1.5rem 1rem;
-      min-height: 100vh;
-    }
-    .main-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
-    .glass-card { background: var(--card-bg-color); border: 1px solid var(--border-color); padding: 1.5rem; backdrop-filter: blur(20px); border-radius: 16px; }
-    .header-card { text-align: center; background: none; padding: 1rem 0; }
-    .header-card h1 { font-family: var(--font-mono); color: #fff; font-size: 1.8em; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; }
-    .header-card p { font-family: var(--font-mono); color: var(--accent-color); margin-top: 0.5rem; }
-    .section-title { font-family: var(--font-mono); color: var(--accent-color); margin: 0 0 1.5rem 0; font-size: 1.2em; text-transform: uppercase; font-weight: 700; }
-    .event-list { display: flex; flex-direction: column; gap: 1rem; }
-    .event-item { display: flex; gap: 1.25rem; align-items: flex-start; }
-    .event-time { font-family: var(--font-mono); color: var(--accent-color); font-size: 1em; font-weight: 700; flex-shrink: 0; }
-    .event-content { display: flex; flex-direction: column; gap: 0.3rem; }
-    .event-details { font-size: 1em; font-weight: 500; color: #fff; }
-    .event-details .person { opacity: 0.7; font-style: italic; margin-left: 0.25rem; }
-    .event-notes { font-size: 0.9em; opacity: 0.8; margin-top: 0.5rem; padding-left: 0.75rem; border-left: 2px solid var(--accent-color); white-space: pre-line; }
-    .teams-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    .team { background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; }
-    .team h4 { font-family: var(--font-mono); margin-bottom: 0.5rem; color: #fff; font-size: 1em; text-transform: uppercase; }
-    .team p { margin: 0; opacity: 0.8; font-size: 0.9em; white-space: pre-line; }
-    @media (min-width: 600px) { .teams-grid { grid-template-columns: repeat(2,1fr); } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação | IASD Campo Grande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0d1a;
+            --card-bg-color: rgba(20, 20, 40, 0.5);
+            --text-color: #e0e0e0;
+            --accent-color: #00ffff; /* Ciano Elétrico */
+            --border-color: rgba(255, 255, 255, 0.1);
+            --font-primary: 'Inter', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(0, 255, 255, 0.15), transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(120, 0, 255, 0.15), transparent 40%);
+            color: var(--text-color);
+            font-family: var(--font-primary);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .glass-card {
+            background: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 0;
+        }
+
+        .header-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+        }
+
+        .header-card h1 {
+            font-family: var(--font-mono);
+            color: #fff;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0;
+        }
+
+        .header-card p {
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+            font-size: 1em;
+            margin-top: 0.5rem;
+        }
+
+        .section-title {
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+            margin: 0 0 1.5rem 0;
+            font-size: 1.5em;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .event-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .event-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 0.5rem 1rem;
+            align-items: start;
+        }
+
+        .event-item strong {
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+            text-align: right;
+            font-size: 1em;
+            padding-top: 2px;
+        }
+
+        .event-details {
+            font-size: 1em;
+        }
+
+        .event-details .person {
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        .event-notes {
+            opacity: 0.8;
+            font-size: 0.9em;
+            display: block;
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--border-color);
+        }
+        
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .team h4 {
+            font-family: var(--font-mono);
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .team p {
+            margin: 0;
+            opacity: 0.7;
+            font-size: 0.9em;
+        }
+        
+        /* OTIMIZAÇÃO PARA DISPOSITIVOS MÓVEIS */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .main-container {
+                gap: 1.5rem;
+            }
+            
+            .glass-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .header-card h1 {
+                font-size: 1.8em;
+                letter-spacing: 3px;
+            }
+
+            .header-card p {
+                font-size: 0.9em;
+            }
+
+            .section-title {
+                font-size: 1.3em;
+            }
+
+            .event-list {
+                gap: 1.25rem;
+            }
+            
+            .event-item {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .event-item strong {
+                text-align: left;
+                padding-top: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <main class="main-container">
-    <header class="header-card">
-      <h1>IASD Campo Grande</h1>
-      <p>23 de Agosto de 2025 - Quebrando o Silêncio</p>
-    </header>
 
-    <section class="glass-card">
-      <h2 class="section-title">Escola Sabatina</h2>
-      <div class="event-list">
-        <div class="event-item"><strong class="event-time">08:00</strong><div class="event-content"><span class="event-details">Momento de Oração</span></div></div>
-        <div class="event-item"><strong class="event-time">08:20</strong><div class="event-content"><span class="event-details">Classe dos Professores</span></div></div>
-        <div class="event-item"><strong class="event-time">09:00</strong><div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Railda)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">09:05</strong><div class="event-content"><span class="event-details">Louvores <span class="person">(Railda e Elias)</span></span><span class="event-notes">- A Voz de Jesus (152 HA)
-		- Sob Suas Asas (193 HA)</span></div></div>
-        <div class="event-item"><strong class="event-time">09:12</strong><div class="event-content"><span class="event-details">Informativo Mundial das Missões <span class="person">(Vídeo)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">09:15</strong><div class="event-content"><span class="event-details">Introdução da Lição <span class="person">(Vladimir)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">09:17</strong><div class="event-content"><span class="event-details">Oração Professores <span class="person">(Vladimir)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">09:50</strong><div class="event-content"><span class="event-details">Encerramento da Lição</span></div></div>
-        <div class="event-item"><strong class="event-time">09:50</strong><div class="event-content"><span class="event-details">Distribuição material Quebrando o Silêncio</span></div></div>
-      </div>
-    </section>
+    <main class="main-container">
 
-    <section class="glass-card">
-      <h2 class="section-title">Culto Divino</h2>
-      <div class="event-list">
-        <div class="event-item"><strong class="event-time">10:20</strong><div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Patrícia)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">10:25</strong><div class="event-content"><span class="event-details">Anúncios <span class="person">(Pedro Rafael e Luiz Felipe)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">10:30</strong><div class="event-content"><span class="event-details">Adoração Infantil <span class="person">(Cristina)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">10:40</strong><div class="event-content"><span class="event-details">Música Especial <span class="person">(Stefani Oliveira)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">10:45</strong><div class="event-content"><span class="event-details">Momento de Entrega</span><span class="event-notes">Ofertório: Deborah
-		Louvor: Canção da Vida (375 HA)
-		Oração Intercessora: Marcia Aparecida
-		Louvor: Obrigado (347 HA)
-		Louvor: Consagração - Aline Barros</span></div></div>
-        <div class="event-item"><strong class="event-time">11:15</strong><div class="event-content"><span class="event-details">Mensagem <span class="person">(Ruth Carvalho)</span></span><span class="event-notes">Tema: Jesus Cristo - Do Batismo ao Deserto</span></div></div>
-        <div class="event-item"><strong class="event-time">11:55</strong><div class="event-content"><span class="event-details">Música Especial <span class="person">(Stefani Oliveira)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">12:00</strong><div class="event-content"><span class="event-details">Encerramento <span class="person">(Oração Final)</span></span></div></div>
-        <div class="event-item"><strong class="event-time">12:05</strong><div class="event-content"><span class="event-details">Orientações de Saída <span class="person">(Luiz)</span></span></div></div>
-      </div>
-    </section>
+        <header class="glass-card header-card">
+            <h1>IASD Campo Grande</h1>
+            <p>30 de Agosto de 2025 // Sábado</p>
+        </header>
 
-    <section class="glass-card">
-      <h2 class="section-title">Equipes de Plantão</h2>
-      <div class="teams-grid">
-        <div class="team"><h4>Anciãos</h4><p>Patrícia, Luiz Silva</p></div>
-        <div class="team"><h4>Recepção</h4><p>Lucinete, Gabriel, Daniel Villaça</p></div>
-        <div class="team"><h4>Diáconos</h4><p>Romilson Rodrigues (Coordenador)
-		Manoel Alves
-		Marcelo Martins
-		Witnei César</p></div>
-        <div class="team"><h4>Diaconisas</h4><p>Eunice
-		Mirian
-		Zilda</p></div>
-        <div class="team"><h4>Vocal</h4><p>Nathan (Ministração)
-		Elisama (Soprano)
-		Emanuely (Soprano)
-		Stefani (Contralto)
-		Luiz Felipe (Barítono)</p></div>
-        <div class="team"><h4>Banda</h4><p>Violão - Henrique
-		Contrabaixo - Evanildo
-		Bateria - Josué
-		Piano - Pr Pedro</p></div>
-        <div class="team"><h4>Sonoplastia e Transmissão</h4><p>Suporte - ???
-		Mesa de som - ???
-		PC - ???
-		Transmissão - ???
-		Câmeras - ???</p></div>
-      </div>
-    </section>
-  </main>
+        <section class="glass-card">
+            <h2 class="section-title">ESCOLA SABATINA</h2>
+            <div class="event-list">
+                <div class="event-item"><strong>08:00</strong><span class="event-details">Momento de Oração <span class="person">(Classe de Professores)</span></span></div>
+                <div class="event-item"><strong>08:20</strong><span class="event-details">Introdução <span class="person">(Classe de Professores)</span></span></div>
+                <div class="event-item"><strong>09:00</strong><span class="event-details">Boas-vindas & Oração <span class="person">(Railda)</span></span></div>
+                <div class="event-item"><strong>09:01</strong><span class="event-details">Louvores <span class="person">(Elias & Railda)</span><span class="event-notes">(57 HA) A Palavra do Senhor<br>(283 HA) Crer e Observar</span></span></div>
+                <div class="event-item"><strong>09:12</strong><span class="event-details">Informativo Mundial das Missões <span class="person">(Vídeo)</span></span></div>
+                <div class="event-item"><strong>09:17</strong><span class="event-details">Oração dos Professores <span class="person">(Vladimir)</span></span></div>
+                <div class="event-item"><strong>10:15</strong><span class="event-details">Encerramento da Lição & Leitura da Ata</span></div>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2 class="section-title">CULTO DIVINO // INÍCIO 10:20</h2>
+            <div class="event-list">
+                <div class="event-item"><strong>10:20</strong><span class="event-details">Boas-vindas <span class="person">(Evanildo Andrade)</span></span></div>
+                <div class="event-item"><strong>10:22</strong><span class="event-details">Anúncios <span class="person">(Luiz Felipe e Pedro Rafael)</span></span></div>
+                <div class="event-item"><strong>10:27</strong><span class="event-details">Adoração Infantil <span class="person">(Daiane Santiago)</span></span></div>
+                <div class="event-item"><strong>10:37</strong><span class="event-details">Música Especial <span class="person">(Natany)</span></span></div>
+                <div class="event-item"><strong>10:44</strong><span class="event-details">Momento de Entrega<span class="event-notes">Ofertório: Jefferson Fontana<br>Oração Intercessora: Marcia Aparecida<br>Louvores: Mais Perto Quero Estar, Bondade de Deus, Primeira Essência</span></span></div>
+                <div class="event-item"><strong>11:15</strong><span class="event-details">Mensagem <span class="person">(Pr. Patrick Marlon)</span><span class="event-notes">Tema: Embaixadores do Reino</span></span></div>
+                <div class="event-item"><strong>11:55</strong><span class="event-details">Música Especial <span class="person">(Natany)</span></span></div>
+                <div class="event-item"><strong>11:58</strong><span class="event-details">Encerramento & Oração Final <span class="person">(Pr. Patrick Marlon)</span></span></div>
+                <div class="event-item"><strong>12:00</strong><span class="event-details">Orientações de Saída <span class="person">(Deivison Miguel)</span></span></div>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2 class="section-title">EQUIPES DE PLANTÃO</h2>
+            <div class="teams-grid">
+                <div class="team"><h4>Anciãos</h4><p>Deivison Miguel, Evanildo Andrade</p></div>
+                <div class="team"><h4>Dir. Escola Sabatina</h4><p>Vladimir</p></div>
+                <div class="team"><h4>Recepção</h4><p>Witney Cesar, Lizete Brito, Camila, Manoel, Ingrid, Aline</p></div>
+                <div class="team"><h4>Diáconos</h4><p>Marcos Maravilha (Coord.), Eduardo Santos, Marcelo Maravilha, Edson Brasil</p></div>
+                <div class="team"><h4>Diaconisas</h4><p>Railda, Sueli, Cleide</p></div>
+                <div class="team"><h4>Comunicação</h4><p>Luiz Felipe, Pedro Rafael</p></div>
+                <div class="team"><h4>Minist. do Louvor</h4><p>Nathan (Tenor)</p></div>
+                <div class="team"><h4>Vocal</h4><p>Emanuely, Patrícia, Luiz Felipe, Stefani</p></div>
+                <div class="team"><h4>Banda</h4><p>Giovanni, Henrique Soares, Luan</p></div>
+                <div class="team"><h4>Louvor Especial</h4><p>Natany</p></div>
+                <div class="team"><h4>Sonoplastia & Transmissão</h4><p>PC: Davi<br>Som: Rafael<br>Transmissão: Letícia<br>Câmera: Renan</p></div>
+            </div>
+        </section>
+
+    </main>
+
 </body>
 </html>
