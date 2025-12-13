@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Totem Digital - Guia da Equipe IASD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Noto Serif', serif; } /* Aproximação da fonte Advent Sans */
+        .aspect-9-16 { aspect-ratio: 9/16; }
+        @media print {
+            .no-print { display: none; }
+            body { background: white; }
+            .shadow-lg { box-shadow: none; border: 1px solid #e5e7eb; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-12 px-4 shadow-xl border-b-4 border-yellow-500">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-4 inline-block bg-white/10 px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase backdrop-blur-sm border border-yellow-500/50">
+                Comunicação & Mídia IASD
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4">Projeto Totem Digital</h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
+                Guia prático de implementação do totem informativo para membros e visitantes da Igreja Adventista do Sétimo Dia.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-12 -mt-8">
+        
+        <!-- Intro Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12 border-l-8 border-yellow-500">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4 flex items-center">
+                <i class="fas fa-bullseye text-yellow-600 mr-3"></i> O Objetivo
+            </h2>
+            <p class="text-slate-600 leading-relaxed">
+                Modernizar a comunicação da igreja, substituindo o excesso de avisos verbais por um sistema rotativo. O totem divulgará a <strong>Escola Sabatina, Cultos, Mutirão de Natal</strong> e facilitará o acesso ao <strong>7me</strong> e Redes Sociais.
+            </p>
+        </div>
+
+        <!-- Grid de 3 Pilares -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            
+            <!-- Pilar 1: Hardware -->
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-blue-600">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+                    <i class="fas fa-tv text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">1. O Hardware</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                        <span><strong>TV na Vertical:</strong> Modo Retrato (90º).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                        <span><strong>Player:</strong> Fire Stick 4K ou Chromecast Google TV.</span>
+                    </li>
+                    <li class="text-xs text-slate-400 mt-2 bg-slate-100 p-2 rounded">
+                        *Essencial para rodar apps de Digital Signage sem travar.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pilar 2: Software -->
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-indigo-600">
+                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4">
+                    <i class="fas fa-cloud text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">2. O Software</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                        <span><strong>PosterBooking:</strong> Grátis para telas da igreja.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                        <span><strong>Gestão Remota:</strong> A equipe atualiza de casa.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                        <span><strong>Offline:</strong> Funciona mesmo se o Wi-Fi da igreja cair.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pilar 3: Design IASD -->
+            <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300 border-t-4 border-yellow-500">
+                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 mb-4">
+                    <i class="fas fa-paint-brush text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">3. Identidade Visual</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                        <span><strong>Formato Story:</strong> 9:16 (1080x1920 px).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                        <span><strong>Logo IASD:</strong> Usar sempre a versão oficial (Grid).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                        <span><strong>Canva:</strong> Usar fontes limpas (Advent Sans ou similar).</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Seção Exemplos Práticos IASD -->
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Exemplos de Conteúdo (Templates)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            
+            <!-- Exemplo 1: Horários -->
+            <div class="bg-slate-800 text-white p-4 rounded-xl shadow-lg flex flex-col items-center">
+                <div class="bg-black w-full aspect-9-16 rounded mb-4 relative overflow-hidden border border-slate-600">
+                    <!-- Slide Content -->
+                    <div class="absolute inset-0 flex flex-col justify-between p-4 bg-[url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center">
+                        <div class="absolute inset-0 bg-slate-900/80"></div>
+                        <div class="relative z-10 text-center mt-8">
+                            <h4 class="text-yellow-400 text-xl font-serif font-bold uppercase tracking-widest border-b border-yellow-400 pb-2 mb-4">Agenda Semanal</h4>
+                            <div class="text-left space-y-4 px-2">
+                                <div>
+                                    <p class="text-xs text-slate-300 uppercase">Sábado</p>
+                                    <p class="font-bold text-lg">09h00 Escola Sabatina</p>
+                                    <p class="font-bold text-lg">10h45 Culto Divino</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-300 uppercase">Domingo</p>
+                                    <p class="font-bold text-lg">19h00 Culto Evangelístico</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-300 uppercase">Quarta-feira</p>
+                                    <p class="font-bold text-lg">19h30 Culto de Oração</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative z-10 text-center mb-4">
+                            <i class="fas fa-church text-2xl mb-1"></i>
+                            <p class="text-[10px]">Seja bem-vindo à Casa de Deus</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-semibold text-sm">Horários Fixos</p>
+                <p class="text-xs text-slate-400">Exibição permanente</p>
+            </div>
+
+            <!-- Exemplo 2: Mutirão de Natal -->
+            <div class="bg-slate-800 text-white p-4 rounded-xl shadow-lg flex flex-col items-center">
+                <div class="bg-black w-full aspect-9-16 rounded mb-4 relative overflow-hidden border border-slate-600">
+                    <!-- Slide Content -->
+                    <div class="absolute inset-0 flex flex-col justify-center items-center p-4 bg-red-800">
+                        <div class="text-center">
+                            <div class="text-6xl text-white mb-2"><i class="fas fa-hand-holding-heart"></i></div>
+                            <h3 class="text-3xl font-serif font-bold mb-1">MUTIRÃO</h3>
+                            <h3 class="text-xl font-serif mb-6 text-yellow-300">DE NATAL</h3>
+                            <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                                <p class="text-sm font-bold mb-1">META: 50 CESTAS</p>
+                                <div class="w-full bg-slate-900/50 h-2 rounded-full mb-2">
+                                    <div class="bg-green-400 h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                                <p class="text-xs">Já arrecadamos 35!</p>
+                            </div>
+                            <p class="mt-6 text-sm font-semibold">Traga 1kg de alimento</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-semibold text-sm">Campanhas (ADRA/ASA)</p>
+                <p class="text-xs text-slate-400">Atualização semanal</p>
+            </div>
+
+            <!-- Exemplo 3: App 7me -->
+            <div class="bg-slate-800 text-white p-4 rounded-xl shadow-lg flex flex-col items-center">
+                <div class="bg-black w-full aspect-9-16 rounded mb-4 relative overflow-hidden border border-slate-600">
+                    <!-- Slide Content -->
+                    <div class="absolute inset-0 flex flex-col justify-center items-center p-6 bg-blue-600">
+                        <div class="text-white text-5xl font-bold mb-2 tracking-tighter">7me</div>
+                        <p class="text-center text-sm mb-6 px-2">Facilite sua adoração através dos Dízimos e Ofertas.</p>
+                        
+                        <div class="bg-white p-2 rounded-lg mb-4">
+                            <!-- QR Code Simulado -->
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.7me.app" alt="QR Code 7me" class="w-32 h-32">
+                        </div>
+                        
+                        <p class="text-xs text-blue-100 text-center">Aponte a câmera do celular<br>para baixar ou acessar.</p>
+                    </div>
+                </div>
+                <p class="font-semibold text-sm">Aplicativo 7me</p>
+                <p class="text-xs text-slate-400">Link direto via QR Code</p>
+            </div>
+
+        </div>
+
+        <!-- Seção Fluxo de Trabalho -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-6">Fluxo Semanal de Atualização</h2>
+                <div class="space-y-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold">1</div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-slate-800">Criação no Canva</h4>
+                            <p class="text-slate-600 text-sm">Edite os templates (agenda, ASA, Ministério da Mulher, etc). Exporte como Imagem.</p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold">2</div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-slate-800">Upload no Painel</h4>
+                            <p class="text-slate-600 text-sm">Acesse o sistema (ex: PosterBooking) e suba as artes.</p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold">3</div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-slate-800">Organizar Playlist</h4>
+                            <p class="text-slate-600 text-sm">Mantenha os fixos (Horários/7me) e troque os semanais (Anúncios).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center">
+                 <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200 max-w-sm">
+                    <h4 class="font-bold text-yellow-800 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Dica Importante</h4>
+                    <p class="text-sm text-yellow-900 mb-2">Para o <strong>QR Code do 7me</strong> funcionar na TV:</p>
+                    <ul class="text-xs text-yellow-800 list-disc list-inside space-y-1">
+                        <li>O QR Code deve ser <strong>GRANDE</strong> no slide.</li>
+                        <li>Posicione na altura dos olhos (metade superior da TV).</li>
+                        <li>Teste com seu celular a uma distância de 2 metros da TV.</li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center pt-8 border-t border-slate-200 no-print">
+            <button onclick="window.print()" class="bg-slate-800 text-white px-6 py-3 rounded-lg hover:bg-slate-700 transition-colors font-semibold shadow-lg">
+                <i class="fas fa-print mr-2"></i> Imprimir Guia / Salvar PDF
+            </button>
+            <p class="text-slate-400 text-sm mt-4">Documento interno - Equipe de Comunicação IASD</p>
+        </div>
+
+    </main>
+
+</body>
+</html>
