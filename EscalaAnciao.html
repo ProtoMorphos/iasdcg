@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão de Anciãos - 2026</title>
+    <title>Agenda 1º Trimestre</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -19,7 +19,7 @@
         <!-- Cabeçalho -->
         <header class="mb-8 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
             <div>
-                <h1 class="text-3xl font-bold text-slate-800 tracking-tight">Gestão de Anciãos</h1>
+                <h1 class="text-3xl font-bold text-slate-800 tracking-tight">Agenda 1º Trimestre</h1>
                 <p class="text-slate-500 mt-1">Planeamento e Responsabilidades da Igreja</p>
             </div>
             
@@ -39,7 +39,7 @@
                     <input 
                         type="text" 
                         id="searchInputEscala"
-                        placeholder="Pesquisar ancião na escala..." 
+                        placeholder="Pesquisar ancião ou orador..." 
                         class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm"
                     >
                 </div>
@@ -96,43 +96,48 @@
         let searchDepto = "";
 
         const scheduleData = [
-            { date: "03/01", day: "SAB", names: ["Felipe", "Vladimir"], month: 0 },
-            { date: "04/01", day: "DOM", names: ["Sidney"], month: 0 },
-            { date: "07/01", day: "QUA", names: ["Evanildo"], month: 0 },
-            { date: "10/01", day: "SAB", names: ["Gaspar", "Patricia"], month: 0 },
-            { date: "11/01", day: "DOM", names: ["Luiz"], month: 0 },
-            { date: "14/01", day: "QUA", names: ["Gaspar"], month: 0 },
-            { date: "17/01", day: "SAB", names: ["Evanildo", "Sidney"], month: 0 },
-            { date: "18/01", day: "DOM", names: ["Vladimir"], month: 0 },
-            { date: "21/01", day: "QUA", names: ["Vladimir"], month: 0 },
-            { date: "24/01", day: "SAB", names: ["Luiz", "Marcio"], month: 0 },
-            { date: "25/01", day: "DOM", names: ["Felipe"], month: 0 },
-            { date: "28/01", day: "QUA", names: ["Felipe"], month: 0 },
-            { date: "31/01", day: "SAB", names: ["Deivison", "Vitor"], month: 0 },
-            { date: "01/02", day: "DOM", names: ["Marcio"], month: 1 },
-            { date: "04/02", day: "QUA", names: ["Eliza"], month: 1 },
-            { date: "07/02", day: "SAB", names: ["Anderson", "Vitor"], month: 1 },
-            { date: "08/02", day: "DOM", names: ["Anderson"], month: 1 },
-            { date: "11/02", day: "QUA", names: ["Marcio"], month: 1 },
-            { date: "14/02", day: "SAB", names: ["Deivison", "Vladimir"], month: 1 },
-            { date: "18/02", day: "QUA", names: ["Sidney"], month: 1 },
-            { date: "21/02", day: "SAB", names: ["Anderson", "Marcio"], month: 1 },
-            { date: "22/02", day: "DOM", names: ["Vitor"], month: 1 },
-            { date: "25/02", day: "QUA", names: ["Patricia"], month: 1 },
-            { date: "28/02", day: "SAB", names: ["Gaspar", "Luiz"], month: 1 },
-            { date: "01/03", day: "DOM", names: ["Luiz"], month: 2 },
-            { date: "04/03", day: "QUA", names: ["Vitor"], month: 2 },
-            { date: "07/03", day: "SAB", names: ["Eliza", "Patricia"], month: 2 },
-            { date: "08/03", day: "DOM", names: ["Patricia"], month: 2 },
-            { date: "11/03", day: "QUA", names: ["Evanildo"], month: 2 },
-            { date: "14/03", day: "SAB", names: ["Deivison", "Evanildo"], month: 2 },
-            { date: "15/03", day: "DOM", names: ["Gaspar"], month: 2 },
-            { date: "18/03", day: "QUA", names: ["Gaspar"], month: 2 },
-            { date: "21/03", day: "SAB", names: ["Eliza", "Sidney"], month: 2 },
-            { date: "22/03", day: "DOM", names: ["Eliza"], month: 2 },
-            { date: "25/03", day: "QUA", names: ["Vladimir"], month: 2 },
-            { date: "28/03", day: "SAB", names: ["Anderson", "Felipe"], month: 2 },
-            { date: "29/03", day: "DOM", names: ["Deivison"], month: 2 },
+            // JANEIRO
+            { date: "03/01", day: "SAB", names: ["Felipe", "Vladimir"], month: 0, orador: "Pr Robson Menezes", info: "BATISMO / Culto Jovem 17:30h" },
+            { date: "04/01", day: "DOM", names: ["Sidney"], month: 0, orador: "Ancionato", info: "Culto Noturno" },
+            { date: "07/01", day: "QUA", names: ["Evanildo"], month: 0, orador: "Pr Ludgero", info: "Culto de Saúde" },
+            { date: "10/01", day: "SAB", names: ["Gaspar", "Patricia"], month: 0, orador: "Marcia Aparecida", info: "Culto Jovem 17:30h" },
+            { date: "11/01", day: "DOM", names: ["Luiz"], month: 0, orador: "Ancionato", info: "Culto Noturno" },
+            { date: "14/01", day: "QUA", names: ["Gaspar"], month: 0, orador: "Ancionato", info: "Culto de Oração" },
+            { date: "17/01", day: "SAB", names: ["Evanildo", "Sidney"], month: 0, orador: "Pr Robson Menezes", info: "JA de Verão 17:30h" },
+            { date: "18/01", day: "DOM", names: ["Vladimir"], month: 0, orador: "Ancionato", info: "Culto Noturno" },
+            { date: "21/01", day: "QUA", names: ["Vladimir"], month: 0, orador: "Pr Robson Menezes", info: "Culto de Oração" },
+            { date: "24/01", day: "SAB", names: ["Luiz", "Marcio"], month: 0, orador: "Pr Pedro Soldaini", info: "JA de Verão 17:30h" },
+            { date: "25/01", day: "DOM", names: ["Felipe"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "28/01", day: "QUA", names: ["Felipe"], month: 0, orador: "Ministério da Mulher", info: "Culto de Oração" },
+            { date: "31/01", day: "SAB", names: ["Deivison", "Vitor"], month: 0, orador: "Alexandre Oliveira", info: "JA de Verão 17:30h" },
+            
+            // FEVEREIRO
+            { date: "01/02", day: "DOM", names: ["Marcio"], month: 1, orador: "Pr Robson Menezes", info: "Comissão de Igreja" },
+            { date: "04/02", day: "QUA", names: ["Eliza"], month: 1, orador: "Min. Saúde", info: "Culto de Saúde" },
+            { date: "07/02", day: "SAB", names: ["Anderson", "Vitor"], month: 1, orador: "Pr Robson Menezes", info: "Igreja Acolhedora / Culto Jovem" },
+            { date: "08/02", day: "DOM", names: ["Anderson"], month: 1, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "11/02", day: "QUA", names: ["Marcio"], month: 1, orador: "Min. da Criança", info: "Culto KIDS" },
+            { date: "14/02", day: "SAB", names: ["Deivison", "Vladimir"], month: 1, orador: "Ancionato", info: "RETIRO ESPIRITUAL" },
+            { date: "18/02", day: "QUA", names: ["Sidney"], month: 1, orador: "Min. Adolescentes", info: "Culto TEEN" },
+            { date: "21/02", day: "SAB", names: ["Anderson", "Marcio"], month: 1, orador: "Pr Robson Menezes", info: "Culto Jovem" },
+            { date: "22/02", day: "DOM", names: ["Vitor"], month: 1, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "25/02", day: "QUA", names: ["Patricia"], month: 1, orador: "Min. da Mulher", info: "Culto de Oração" },
+            { date: "28/02", day: "SAB", names: ["Gaspar", "Luiz Silva"], month: 1, orador: "Mordomia / MM / Oração", info: "10h de Jejum" },
+
+            // MARÇO
+            { date: "01/03", day: "DOM", names: ["Luiz Silva"], month: 2, orador: "Pr Robson Menezes", info: "Comissão de Igreja" },
+            { date: "04/03", day: "QUA", names: ["Vitor"], month: 2, orador: "Min. Saúde", info: "Culto de Saúde" },
+            { date: "07/03", day: "SAB", names: ["Eliza", "Patricia"], month: 2, orador: "Min. da Mulher", info: "Dia da Mulher Adventista / JA" },
+            { date: "08/03", day: "DOM", names: ["Patricia"], month: 2, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "11/03", day: "QUA", names: ["Evanildo"], month: 2, orador: "Min. da Criança", info: "Culto KIDS" },
+            { date: "14/03", day: "SAB", names: ["Deivison", "Evanildo"], month: 2, orador: "Pr Robson Menezes", info: "Culto Divino" },
+            { date: "15/03", day: "DOM", names: ["Gaspar"], month: 2, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "18/03", day: "QUA", names: ["Gaspar"], month: 2, orador: "Min. Adolescentes", info: "Culto TEEN" },
+            { date: "21/03", day: "SAB", names: ["Eliza", "Sidney"], month: 2, orador: "Min. Jovem", info: "Dia Mundial Jovem / JA" },
+            { date: "22/03", day: "DOM", names: ["Eliza"], month: 2, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "25/03", day: "QUA", names: ["Vladimir"], month: 2, orador: "Min. da Mulher", info: "Culto de Oração" },
+            { date: "28/03", day: "SAB", names: ["Anderson", "Felipe"], month: 2, orador: "Pr Robson Menezes / ARS", info: "SEMANA SANTA" },
+            { date: "29/03", day: "DOM", names: ["Deivison"], month: 2, orador: "Pr Robson Menezes / ARS", info: "SEMANA SANTA" },
         ];
 
         const eldersData = [
@@ -178,7 +183,10 @@
             const grid = document.getElementById('scheduleGrid');
             const filtered = scheduleData.filter(item => {
                 const matchesMonth = item.month === activeMonth;
-                const matchesSearch = !searchEscala || item.names.some(n => n.toLowerCase().includes(searchEscala.toLowerCase()));
+                const matchesSearch = !searchEscala || 
+                    item.names.some(n => n.toLowerCase().includes(searchEscala.toLowerCase())) ||
+                    item.orador.toLowerCase().includes(searchEscala.toLowerCase()) ||
+                    (item.info && item.info.toLowerCase().includes(searchEscala.toLowerCase()));
                 return matchesMonth && matchesSearch;
             });
 
@@ -188,25 +196,52 @@
             }
 
             grid.innerHTML = filtered.map(item => `
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden group">
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
+                    <!-- Header do Card -->
                     <div class="flex items-center gap-3 p-4 bg-slate-50/50 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-xl flex flex-col items-center justify-center border font-bold ${getDayStyle(item.day)}">
+                        <div class="w-12 h-12 rounded-xl flex flex-col items-center justify-center border font-bold ${getDayStyle(item.day)} shadow-sm">
                             <span class="text-[10px] uppercase opacity-80 leading-none mb-1">${item.day}</span>
                             <span class="text-lg leading-none">${item.date.split('/')[0]}</span>
                         </div>
-                        <div>
-                            <p class="font-bold text-slate-700">Culto de ${item.day === 'QUA' ? 'Quarta' : item.day === 'SAB' ? 'Sábado' : 'Domingo'}</p>
-                            <p class="text-xs text-slate-400">${months[activeMonth]}</p>
+                        <div class="flex-grow">
+                            <p class="font-bold text-slate-700 text-sm leading-tight">${item.info || 'Culto de Rotina'}</p>
+                            <p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">${months[activeMonth]} • 2026</p>
                         </div>
                     </div>
-                    <div class="p-4 space-y-2">
-                        ${item.names.map(name => `
-                            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 text-slate-600 border border-transparent hover:border-blue-200 transition-all">
-                                <span class="text-sm font-medium">${name}</span>
-                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-slate-300"></i>
+
+                    <!-- Conteúdo do Card -->
+                    <div class="p-4 space-y-4">
+                        <!-- Orador -->
+                        <div>
+                            <div class="flex items-center gap-2 mb-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                                <i data-lucide="mic-2" class="w-3 h-3"></i> Orador
                             </div>
-                        `).join('')}
+                            <p class="text-sm font-semibold text-blue-700">${item.orador}</p>
+                        </div>
+
+                        <!-- Anciãos -->
+                        <div>
+                            <div class="flex items-center gap-2 mb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                                <i data-lucide="users" class="w-3 h-3"></i> Anciãos
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                ${item.names.map(name => `
+                                    <span class="px-2 py-1 bg-slate-50 text-slate-600 rounded-lg text-xs font-medium border border-slate-100 flex items-center gap-1">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                                        ${name}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Rodapé do Card (se houver JA ou evento especial) -->
+                    ${item.info && (item.info.includes("JA") || item.info.includes("SANTA")) ? `
+                        <div class="bg-amber-50 px-4 py-2 border-t border-amber-100 flex items-center gap-2">
+                            <i data-lucide="info" class="w-3 h-3 text-amber-500"></i>
+                            <span class="text-[10px] font-bold text-amber-700 uppercase tracking-tight">Evento Especial</span>
+                        </div>
+                    ` : ''}
                 </div>
             `).join('');
         }
@@ -220,12 +255,12 @@
 
             grid.innerHTML = filtered.map(elder => `
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all overflow-hidden relative">
-                    <div class="h-2 w-full bg-${elder.color}-500"></div>
+                    <div class="h-2 w-full bg-slate-400"></div>
                     <div class="p-5">
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="font-bold text-lg text-slate-800">${elder.name}</h3>
-                            <div class="p-2 bg-${elder.color}-50 rounded-lg">
-                                <i data-lucide="user" class="w-5 h-5 text-${elder.color}-600"></i>
+                            <div class="p-2 bg-slate-50 rounded-lg">
+                                <i data-lucide="user" class="w-5 h-5 text-slate-400"></i>
                             </div>
                         </div>
                         <div class="space-y-2">
