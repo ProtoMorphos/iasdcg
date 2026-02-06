@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda 1º Trimestre</title>
+    <title>Gestão de Anciãos e Oficiais - 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .nav-btn.active { border-bottom: 3px solid #2563eb; color: #1e40af; }
-        .month-btn.active { background-color: #2563eb; color: white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        
+        /* Ajuste no botão do mês para garantir legibilidade */
+        .month-btn.active { background-color: #2563eb; color: white !important; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .month-btn.active:hover { background-color: #1d4ed8; color: white !important; }
+        .month-btn:not(.active):hover { background-color: #f1f5f9; color: #1e293b; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased p-4 md:p-8">
@@ -19,20 +26,20 @@
         <!-- Cabeçalho -->
         <header class="mb-8 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
             <div>
-                <h1 class="text-3xl font-bold text-slate-800 tracking-tight">Agenda 1º Trimestre</h1>
-                <p class="text-slate-500 mt-1">Planeamento e Responsabilidades da Igreja</p>
+                <h1 class="text-3xl font-bold text-slate-800 tracking-tight">Gestão da Igreja 2026</h1>
+                <p class="text-slate-500 mt-1">Planeamento, Escalas e Liderança</p>
             </div>
             
             <!-- Navegação de Abas Principais -->
-            <nav class="flex gap-6">
-                <button onclick="setView('escala')" id="nav-escala" class="nav-btn active pb-2 font-semibold text-slate-600 transition-all">Escala de Cultos</button>
-                <button onclick="setView('departamentos')" id="nav-departamentos" class="nav-btn pb-2 font-semibold text-slate-600 transition-all">Departamentos</button>
+            <nav class="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar">
+                <button onclick="setView('escala')" id="nav-escala" class="nav-btn active pb-2 font-semibold text-slate-600 transition-all whitespace-nowrap">Escala de Cultos</button>
+                <button onclick="setView('departamentos')" id="nav-departamentos" class="nav-btn pb-2 font-semibold text-slate-600 transition-all whitespace-nowrap">Áreas (Anciãos)</button>
+                <button onclick="setView('oficiais')" id="nav-oficiais" class="nav-btn pb-2 font-semibold text-slate-600 transition-all whitespace-nowrap">Oficiais / Líderes</button>
             </nav>
         </header>
 
         <!-- Seção da Escala de Cultos -->
         <div id="section-escala">
-            <!-- Pesquisa e Navegação de Meses -->
             <div class="flex flex-col md:flex-row gap-4 mb-6">
                 <div class="relative flex-grow">
                     <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
@@ -45,13 +52,12 @@
                 </div>
                 
                 <div class="flex items-center bg-white rounded-xl border border-slate-200 p-1 shadow-sm overflow-hidden">
-                    <button onclick="changeMonth(0)" class="month-btn active px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-500 hover:bg-slate-50">Janeiro</button>
-                    <button onclick="changeMonth(1)" class="month-btn px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-500 hover:bg-slate-50">Fevereiro</button>
-                    <button onclick="changeMonth(2)" class="month-btn px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-500 hover:bg-slate-50">Março</button>
+                    <button onclick="changeMonth(0)" class="month-btn active px-4 py-2 text-sm font-semibold rounded-lg transition-all">Janeiro</button>
+                    <button onclick="changeMonth(1)" class="month-btn px-4 py-2 text-sm font-semibold rounded-lg transition-all">Fevereiro</button>
+                    <button onclick="changeMonth(2)" class="month-btn px-4 py-2 text-sm font-semibold rounded-lg transition-all">Março</button>
                 </div>
             </div>
 
-            <!-- Legenda -->
             <div class="flex flex-wrap gap-4 mb-6 text-xs font-bold uppercase tracking-wider text-slate-500 px-2">
                 <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-blue-500"></div> Quarta-feira</div>
                 <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-emerald-500"></div> Sábado</div>
@@ -61,28 +67,40 @@
             <div id="scheduleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </div>
 
-        <!-- Seção de Departamentos -->
+        <!-- Seção de Áreas (Anciãos) -->
         <div id="section-departamentos" class="hidden">
             <div class="mb-6 relative">
                 <i data-lucide="filter" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
                 <input 
                     type="text" 
                     id="searchInputDepto"
-                    placeholder="Filtrar por nome ou departamento..." 
+                    placeholder="Filtrar ancião ou área de atuação..." 
                     class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm"
                 >
             </div>
-            
-            <div id="deptoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Cartões de departamentos via JS -->
+            <div id="deptoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+
+        <!-- NOVA SEÇÃO: Oficiais / Líderes -->
+        <div id="section-oficiais" class="hidden">
+            <div class="mb-6 relative">
+                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+                <input 
+                    type="text" 
+                    id="searchInputOficiais"
+                    placeholder="Buscar líder ou departamento..." 
+                    class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm"
+                >
             </div>
+            <div id="oficiaisGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </div>
 
         <!-- Rodapé -->
         <footer class="mt-12 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
             <p>© 2026 Gestão Eclesiástica • Secretaria da Igreja</p>
-            <div class="flex justify-center gap-6 mt-4">
+            <div class="flex flex-wrap justify-center gap-6 mt-4">
                 <div class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-blue-500"></i> Liderança Ativa</div>
+                <div class="flex items-center gap-1.5"><i data-lucide="award" class="w-4 h-4 text-amber-500"></i> Oficiais 2026</div>
                 <div class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-emerald-500"></i> Ministério Unificado</div>
             </div>
         </footer>
@@ -94,6 +112,7 @@
         let activeView = 'escala';
         let searchEscala = "";
         let searchDepto = "";
+        let searchOficiais = "";
 
         const scheduleData = [
             // JANEIRO
@@ -143,16 +162,61 @@
         const eldersData = [
             { name: "Felipe", deptos: ["Vida Plena", "Sonoplastia/Transmissão", "Saúde"], color: "blue" },
             { name: "Eliza", deptos: ["Jovens", "Recepção"], color: "purple" },
-            { name: "Marcio Brandão", deptos: ["Tesouraria", "ASA"], color: "emerald" },
-            { name: "Sidney", deptos: ["Zeladoria", "Patrimônio"], color: "orange" },
+            { name: "Marcio Roberto Brandão", deptos: ["Tesouraria", "ASA"], color: "emerald" },
+            { name: "Sidney Trindade Paixão", deptos: ["Zeladoria", "Patrimônio"], color: "orange" },
             { name: "Anderson Assumpção", deptos: ["Comunicação/Mídias", "Diaconato"], color: "indigo" },
-            { name: "Deivison Miguel", deptos: ["Min. Adolescentes", "Espaço Novo Tempo"], color: "cyan" },
-            { name: "Evanildo Andrade", deptos: ["Música", "Secretaria", "Liberdade Religiosa"], color: "rose" },
-            { name: "Gaspar Cipriano", deptos: ["Desbravadores", "Aventureiros"], color: "amber" },
-            { name: "Jose Luiz", deptos: ["Min. Pessoal", "Min. Oração"], color: "teal" },
-            { name: "Patrícia Miguel", deptos: ["Min. da Mulher", "Min. da Família"], color: "pink" },
-            { name: "Vitor Bruno", deptos: ["Min. Criança", "Possibilidades"], color: "sky" },
+            { name: "Deivison Coelho Miguel", deptos: ["Min. Adolescentes", "Espaço Novo Tempo"], color: "cyan" },
+            { name: "Evanildo Silva Andrade Filho", deptos: ["Música", "Secretaria", "Liberdade Religiosa"], color: "rose" },
+            { name: "Anderson Gaspar Cipriano", deptos: ["Desbravadores", "Aventureiros"], color: "amber" },
+            { name: "José Luiz da Silva", deptos: ["Min. Pessoal", "Min. Oração"], color: "teal" },
+            { name: "Patrícia Miguel dos Santos", deptos: ["Min. da Mulher", "Min. da Família"], color: "pink" },
+            { name: "Vitor Bruno do Nascimento", deptos: ["Min. Criança", "Possibilidades"], color: "sky" },
             { name: "Vladimir de Paula", deptos: ["Mordomia", "Escola Sabatina"], color: "violet" }
+        ];
+
+        const colorMap = {
+            blue: { border: 'border-blue-200', bg: 'bg-blue-50', text: 'text-blue-600', accent: 'bg-blue-600' },
+            purple: { border: 'border-purple-200', bg: 'bg-purple-50', text: 'text-purple-600', accent: 'bg-purple-600' },
+            emerald: { border: 'border-emerald-200', bg: 'bg-emerald-50', text: 'text-emerald-600', accent: 'bg-emerald-600' },
+            orange: { border: 'border-orange-200', bg: 'bg-orange-50', text: 'text-orange-600', accent: 'bg-orange-600' },
+            indigo: { border: 'border-indigo-200', bg: 'bg-indigo-50', text: 'text-indigo-600', accent: 'bg-indigo-600' },
+            cyan: { border: 'border-cyan-200', bg: 'bg-cyan-50', text: 'text-cyan-600', accent: 'bg-cyan-600' },
+            rose: { border: 'border-rose-200', bg: 'bg-rose-50', text: 'text-rose-600', accent: 'bg-rose-600' },
+            amber: { border: 'border-amber-200', bg: 'bg-amber-50', text: 'text-amber-600', accent: 'bg-amber-600' },
+            teal: { border: 'border-teal-200', bg: 'bg-teal-50', text: 'text-teal-600', accent: 'bg-teal-600' },
+            pink: { border: 'border-pink-200', bg: 'bg-pink-50', text: 'text-pink-600', accent: 'bg-pink-600' },
+            sky: { border: 'border-sky-200', bg: 'bg-sky-50', text: 'text-sky-600', accent: 'bg-sky-600' },
+            violet: { border: 'border-violet-200', bg: 'bg-violet-50', text: 'text-violet-600', accent: 'bg-violet-600' }
+        };
+
+        const oficiaisData = [
+            { depto: "Diácono Chefe", nome: "Luiz Albuquerque Silva", icon: "user-check" },
+            { depto: "Diaconisa Chefe", nome: "Maria Raílda Silva de Oliveira", icon: "user-check" },
+            { depto: "Secretaria", nome: "Célia Valentina Mattos da Silva", icon: "file-text" },
+            { depto: "Gestor Financeiro", nome: "Sidnei Trindade Paixão", icon: "dollar-sign" },
+            { depto: "Min. da Família", nome: "Claudia Villaça Oliveira e Leandro Ferreira", icon: "heart" },
+            { depto: "Terceira Idade", nome: "Adriana Nascimento Frazão Pereira", icon: "users" },
+            { depto: "Escola Sabatina", nome: "Flavia Estefhane de Almeida Coimbra", icon: "book-open" },
+            { depto: "Ministério Pessoal", nome: "Robson Lourenço da Silva", icon: "cross" },
+            { depto: "Missão Novo Tempo", nome: "Clara Regina Santiago dos Santos", icon: "tv" },
+            { depto: "ASA", nome: "Cristina Santiago Albuquerque Silva", icon: "helping-hand" },
+            { depto: "Ministério da Mulher", nome: "Renata Rodrigues da Silva Melo", icon: "flower" },
+            { depto: "Ministério da Recepção", nome: "Marina de Souza", icon: "smile" },
+            { depto: "Ministério da Criança", nome: "Maria José de Jesus Rosa", icon: "baby" },
+            { depto: "Ministério do Adolescente", nome: "Elaine de Jesus Rosa", icon: "users-2" },
+            { depto: "Patrimônio e Construção", nome: "João Marcos da Silva Chaves", icon: "home" },
+            { depto: "Ministério da Jovem", nome: "Daniel Magalhães Brandão", icon: "zap" },
+            { depto: "Clube de Desbravadores", nome: "Ludmilla Renoavato de Assis", icon: "compass" },
+            { depto: "Clube de Aventureiros", nome: "Lívia Rodrigues Pimenta Gaspar", icon: "star" },
+            { depto: "Ministério da Música", nome: "Patrícia Miguel dos Santos", icon: "music" },
+            { depto: "Mordomia", nome: "Marcia Aparecida dos Santos", icon: "lock" },
+            { depto: "Saúde e Temperança", nome: "Ruth Albuquerque Carvalho", icon: "stethoscope" },
+            { depto: "Liberdade Religiosa", nome: "Gustavo Schutz de Oliveira", icon: "landmark" },
+            { depto: "Multimídia (Sonoplastia)", nome: "Pedro Rafael Thomé Lopes Machado", icon: "headphones" },
+            { depto: "Ministério da Oração", nome: "Flavia Estefhane de Almeida Coimbra", icon: "heart" }, // Alterado para 'heart' para garantir exibição
+            { depto: "Comunicação", nome: "Luiz Felipe Mattos da Silva", icon: "megaphone" },
+            { depto: "MAP (Possibilidades)", nome: "Elisangela Moreira dos Santos Pintor", icon: "accessibility" },
+            { depto: "Publicações", nome: "Célia Valentina Mattos da Silva", icon: "book" }
         ];
 
         function getDayStyle(day) {
@@ -168,14 +232,19 @@
             activeView = view;
             document.getElementById('section-escala').classList.toggle('hidden', view !== 'escala');
             document.getElementById('section-departamentos').classList.toggle('hidden', view !== 'departamentos');
+            document.getElementById('section-oficiais').classList.toggle('hidden', view !== 'oficiais');
+            
             document.getElementById('nav-escala').classList.toggle('active', view === 'escala');
             document.getElementById('nav-departamentos').classList.toggle('active', view === 'departamentos');
+            document.getElementById('nav-oficiais').classList.toggle('active', view === 'oficiais');
+            
             render();
         }
 
         function render() {
             if (activeView === 'escala') renderSchedule();
-            else renderDepartments();
+            else if (activeView === 'departamentos') renderDepartments();
+            else renderOfficials();
             lucide.createIcons();
         }
 
@@ -197,7 +266,6 @@
 
             grid.innerHTML = filtered.map(item => `
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
-                    <!-- Header do Card -->
                     <div class="flex items-center gap-3 p-4 bg-slate-50/50 border-b border-slate-100">
                         <div class="w-12 h-12 rounded-xl flex flex-col items-center justify-center border font-bold ${getDayStyle(item.day)} shadow-sm">
                             <span class="text-[10px] uppercase opacity-80 leading-none mb-1">${item.day}</span>
@@ -208,18 +276,13 @@
                             <p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">${months[activeMonth]} • 2026</p>
                         </div>
                     </div>
-
-                    <!-- Conteúdo do Card -->
                     <div class="p-4 space-y-4">
-                        <!-- Orador -->
                         <div>
                             <div class="flex items-center gap-2 mb-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
                                 <i data-lucide="mic-2" class="w-3 h-3"></i> Orador
                             </div>
                             <p class="text-sm font-semibold text-blue-700">${item.orador}</p>
                         </div>
-
-                        <!-- Anciãos -->
                         <div>
                             <div class="flex items-center gap-2 mb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
                                 <i data-lucide="users" class="w-3 h-3"></i> Anciãos
@@ -234,14 +297,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Rodapé do Card (se houver JA ou evento especial) -->
-                    ${item.info && (item.info.includes("JA") || item.info.includes("SANTA")) ? `
-                        <div class="bg-amber-50 px-4 py-2 border-t border-amber-100 flex items-center gap-2">
-                            <i data-lucide="info" class="w-3 h-3 text-amber-500"></i>
-                            <span class="text-[10px] font-bold text-amber-700 uppercase tracking-tight">Evento Especial</span>
-                        </div>
-                    ` : ''}
                 </div>
             `).join('');
         }
@@ -253,26 +308,54 @@
                 elder.deptos.some(d => d.toLowerCase().includes(searchDepto.toLowerCase()))
             );
 
-            grid.innerHTML = filtered.map(elder => `
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all overflow-hidden relative">
-                    <div class="h-2 w-full bg-slate-400"></div>
-                    <div class="p-5">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-bold text-lg text-slate-800">${elder.name}</h3>
-                            <div class="p-2 bg-slate-50 rounded-lg">
-                                <i data-lucide="user" class="w-5 h-5 text-slate-400"></i>
+            grid.innerHTML = filtered.map(elder => {
+                const colors = colorMap[elder.color] || { border: 'border-slate-200', bg: 'bg-slate-50', text: 'text-slate-600', accent: 'bg-slate-600' };
+                return `
+                    <div class="rounded-2xl border ${colors.border} shadow-sm hover:shadow-md transition-all overflow-hidden relative group" style="background-color: white;">
+                        <div class="h-2 w-full ${colors.accent}"></div>
+                        <div class="p-5" style="background: linear-gradient(to bottom right, white, #f8fafc);">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-bold text-lg text-slate-800 leading-tight">${elder.name}</h3>
+                                <div class="p-3 ${colors.bg} rounded-xl group-hover:rotate-6 transition-transform shadow-sm">
+                                    <i data-lucide="shield" class="w-6 h-6 ${colors.text}"></i>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Departamentos e Áreas</p>
+                                <div class="flex flex-wrap gap-2">
+                                    ${elder.deptos.map(d => `
+                                        <span class="px-3 py-1.5 ${colors.bg} ${colors.text} rounded-lg text-xs font-bold border ${colors.border} shadow-sm">
+                                            ${d}
+                                        </span>
+                                    `).join('')}
+                                </div>
                             </div>
                         </div>
-                        <div class="space-y-2">
-                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Áreas de Atuação</p>
-                            <div class="flex flex-wrap gap-2">
-                                ${elder.deptos.map(d => `
-                                    <span class="px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-medium border border-slate-200">
-                                        ${d}
-                                    </span>
-                                `).join('')}
-                            </div>
-                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderOfficials() {
+            const grid = document.getElementById('oficiaisGrid');
+            const filtered = oficiaisData.filter(item => 
+                item.nome.toLowerCase().includes(searchOficiais.toLowerCase()) || 
+                item.depto.toLowerCase().includes(searchOficiais.toLowerCase())
+            );
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-slate-400">Nenhum oficial encontrado.</div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4 hover:border-blue-300 hover:bg-blue-50/10 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
+                        <i data-lucide="${item.icon || 'star'}" class="w-5 h-5 text-blue-600"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">${item.depto}</p>
+                        <h4 class="font-bold text-slate-800 leading-tight">${item.nome}</h4>
                     </div>
                 </div>
             `).join('');
@@ -293,6 +376,11 @@
 
         document.getElementById('searchInputDepto').addEventListener('input', (e) => {
             searchDepto = e.target.value;
+            render();
+        });
+
+        document.getElementById('searchInputOficiais').addEventListener('input', (e) => {
+            searchOficiais = e.target.value;
             render();
         });
 
