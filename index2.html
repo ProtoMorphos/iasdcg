@@ -1,339 +1,311 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IASD Campo Grande - 05/07/2025 (Moderno)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* 1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS */
-    :root {
-      --bg-color: #0d0d1a;
-      --card-bg-color: rgba(20, 20, 40, 0.6); /* Levemente mais opaco para legibilidade */
-      --text-color: #e0e0e0;
-      --accent-color: #00ffff;
-      --border-color: rgba(0, 255, 255, 0.2); /* Borda com a cor de destaque */
-      --font-primary: 'Inter', sans-serif;
-      --font-mono: 'Roboto Mono', monospace;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação | IASD Campo Grande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent: #22d3ee;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    body {
-      background-color: var(--bg-color);
-      background-image: radial-gradient(circle at 15% 25%, rgba(0, 255, 255, 0.1), transparent 50%), radial-gradient(circle at 85% 75%, rgba(120, 0, 255, 0.1), transparent 50%);
-      color: var(--text-color);
-      font-family: var(--font-primary);
-      padding: 1.5rem 1rem;
-      min-height: 100vh;
-      font-size: 16px;
-    }
+        body {
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
 
-    /* 2. LAYOUT PRINCIPAL */
-    .main-container {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    .glass-card {
-      background: var(--card-bg-color);
-      border: 1px solid var(--border-color);
-      padding: 1.5rem;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 16px; /* Cantos arredondados */
-    }
+        header {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
 
-    /* 3. CABEÇALHO */
-    .header-card {
-      text-align: center;
-      border: none;
-      background: none;
-      backdrop-filter: none;
-      padding: 1rem 0;
-    }
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .header-card h1 {
-      font-family: var(--font-mono);
-      color: #fff;
-      font-size: 1.8em;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 700;
-    }
+        .date-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-    .header-card p {
-      font-family: var(--font-mono);
-      color: var(--accent-color);
-      font-size: 1em;
-      margin-top: 0.5rem;
-      opacity: 0.9;
-    }
+        section {
+            margin-bottom: 30px;
+        }
 
-    /* 4. SEÇÕES E TÍTULOS */
-    .section-title {
-      font-family: var(--font-mono);
-      color: var(--accent-color);
-      margin: 0 0 1.5rem 0;
-      font-size: 1.2em;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-      text-align: left;
-    }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
 
-    /* 5. LAYOUT DA LISTA DE EVENTOS (TIMELINE) */
-    .event-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem; /* Mais espaçamento entre itens */
-    }
+        .section-header h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+        }
 
-    .event-item {
-      display: flex;
-      gap: 1.25rem;
-      align-items: flex-start; /* Alinha no topo */
-    }
+        .section-header .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, rgba(148, 163, 184, 0.3), transparent);
+        }
 
-    .event-time {
-      font-family: var(--font-mono);
-      color: var(--accent-color);
-      font-size: 1em;
-      font-weight: 700;
-      flex-shrink: 0; /* Impede que o tempo encolha */
-    }
+        /* Card de Evento */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-    .event-content {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-    
-    .event-details {
-      font-size: 1em;
-      font-weight: 500;
-      color: #fff;
-    }
+        .event-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+        }
 
-    .event-details .person {
-      opacity: 0.7;
-      font-style: italic;
-      margin-left: 0.25rem;
-    }
+        .event-card:active {
+            transform: scale(0.98);
+        }
 
-    .event-notes {
-      font-size: 0.9em;
-      opacity: 0.8;
-      margin-top: 0.5rem;
-      padding-left: 0.75rem;
-      border-left: 2px solid var(--accent-color);
-      white-space: pre-line;
-      line-height: 1.5;
-    }
+        .time-box {
+            min-width: 65px;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            margin-right: 15px;
+        }
 
-    /* 6. LAYOUT DAS EQUIPES */
-    .teams-grid {
-      display: grid;
-      /* Uma coluna em telas pequenas, duas em telas maiores */
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    
-    .team {
-      background-color: rgba(0, 0, 0, 0.2);
-      padding: 1rem;
-      border-radius: 8px;
-    }
+        .time-box span {
+            display: block;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--accent);
+        }
 
-    .team h4 {
-      font-family: var(--font-mono);
-      margin: 0 0 0.5rem 0;
-      text-transform: uppercase;
-      color: #fff;
-      font-size: 1em;
-      letter-spacing: 1px;
-    }
+        .event-info {
+            flex: 1;
+        }
 
-    .team p {
-      margin: 0;
-      opacity: 0.8;
-      font-size: 0.9em;
-      line-height: 1.6;
-      white-space: pre-line;
-    }
+        .event-title {
+            display: block;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
 
-    /* 7. DESIGN RESPONSIVO PARA TELAS MAIORES */
-    @media (min-width: 600px) {
-      .teams-grid {
-        /* Layout de 2 colunas para telas a partir de 600px */
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (min-width: 768px) {
-      body {
-        padding: 2rem;
-      }
+        .event-person {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
 
-      .glass-card {
-        padding: 2rem;
-      }
-      
-      .header-card h1 {
-        font-size: 2.2em;
-      }
-    }
+        /* Destaque para o Batismo */
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(34, 211, 238, 0.2));
+            border: 1px solid var(--accent);
+        }
 
-  </style>
+        .event-notes {
+            margin-top: 10px;
+            font-size: 0.8rem;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            color: #cbd5e1;
+        }
+
+        /* Grid de Equipes */
+        .teams-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .team-mini-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .team-mini-card h4 {
+            margin: 0 0 5px 0;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .team-mini-card p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            line-height: 1.3;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+    </style>
 </head>
 <body>
-  <main class="main-container">
 
-    <header class="header-card">
-      <h1>IASD Campo Grande</h1>
-      <p>05 de Julho de 2025</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>IASD Campo Grande</h1>
+            <div class="date-badge">18 de Abril • Sábado</div>
+        </header>
 
-    <section class="glass-card">
-      <h2 class="section-title">Escola Sabatina</h2>
-      <div class="event-list">
-        <div class="event-item">
-          <strong class="event-time">08:00</strong>
-          <div class="event-content"><span class="event-details">Desjejum</span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">08:20</strong>
-          <div class="event-content"><span class="event-details">Introdução</span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:00</strong>
-          <div class="event-content"><span class="event-details">Boas-vindas / Oração <span class="person">(Railda)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:01</strong>
-          <div class="event-content">
-            <span class="event-details">Louvores <span class="person">(Elias / Railda)</span></span>
-            <span class="event-notes">1 - (186 HA) Ó Mestre, o mar se revolta
-2 - (48 HA) O poder do Espírito</span>
-          </div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:12</strong>
-          <div class="event-content"><span class="event-details">Informativo Mundial das Missões <span class="person">(Vídeo)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:15</strong>
-          <div class="event-content"><span class="event-details">Introdução da Lição <span class="person">(Luis Silva)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">09:17</strong>
-          <div class="event-content"><span class="event-details">Oração pelos Professores <span class="person">(Luis Silva)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">10:15</strong>
-          <div class="event-content"><span class="event-details">Encerramento da Lição</span></div>
-        </div>
-      </div>
-    </section>
+        <section>
+            <div class="section-header">
+                <h2>Culto Divino</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="event-card">
+                    <div class="time-box"><span>09:00</span></div>
+                    <div class="event-info">
+                        <span class="event-title">Boas-vindas & Oração</span>
+                        <span class="event-person">Gaspar</span>
+                    </div>
+                </div>
 
-    <section class="glass-card">
-      <h2 class="section-title">Culto Divino</h2>
-      <div class="event-list">
-        <div class="event-item">
-          <strong class="event-time">10:20</strong>
-          <div class="event-content"><span class="event-details">Anúncios <span class="person">(Levi e Luiz Felipe)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">10:25</strong>
-          <div class="event-content"><span class="event-details">Maná <span class="person">(Célia e Fernando)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">10:30</strong>
-          <div class="event-content"><span class="event-details">Adoração Infantil <span class="person">(Andresa)</span></span></div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">10:40</strong>
-          <div class="event-content">
-            <span class="event-details">Momento de Entrega</span>
-            <span class="event-notes">Ofertório: Davi
-Música: Não me esqueci de ti (HA 213)
-Oração Intercessora: Luis Silva
-Música: Lugar Secreto
-Música: A Ele a glória</span>
-          </div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">11:10</strong>
-          <div class="event-content">
-            <span class="event-details">Mensagem <span class="person">(Pr. Robson Menezes)</span></span>
-            <span class="event-notes">Tema: Ricos para com Deus</span>
-          </div>
-        </div>
-        <div class="event-item">
-          <strong class="event-time">11:55</strong>
-          <div class="event-content"><span class="event-details">Orientações para a Saída <span class="person">(Luis Fernando Maia)</span></span></div>
-        </div>
-      </div>
-    </section>
+                <div class="event-card">
+                    <div class="time-box"><span>09:10</span></div>
+                    <div class="event-info">
+                        <span class="event-title">Anúncios</span>
+                        <span class="event-person">Renata e Gabriel</span>
+                    </div>
+                </div>
 
-    <section class="glass-card">
-      <h2 class="section-title">Equipes de Plantão</h2>
-      <div class="teams-grid">
-        <div class="team">
-          <h4>Anciãos</h4>
-          <p>Luis Fernando, João Marcos (Luis Silva)</p>
-        </div>
-        <div class="team">
-          <h4>Recepção</h4>
-          <p>Marta, Elena, Whitney</p>
-        </div>
-        <div class="team">
-          <h4>Sonoplastia e Transmissão</h4>
-          <p>🎛️ Mesa de som - Henrique
-💻 PC - Breno
-🛜 Transmissão - Davi
-📹 Câmeras - João</p>
-        </div>
-        <div class="team">
-          <h4>Diáconos</h4>
-          <p>Marcelo Maravilha (Coordenador)
-Eduardo Santos
-Edson Brasil
-Marcos Maravilha</p>
-        </div>
-        <div class="team">
-          <h4>Diaconisas</h4>
-          <p>Eunice
-Vera
-Sueli</p>
-        </div>
-        <div class="team">
-          <h4>Louvor</h4>
-          <p>Nathan - Tenor (Ministração)
-Giulia - Soprano
-Emanuely - Soprano
-Stefani - Contralto
-Willisa - Contralto
-Luiz Felipe - Barítono</p>
-        </div>
-        <div class="team">
-          <h4>Banda</h4>
-          <p>Bateria - Luan
-Violão - Pr. Pedro
-Piano - Giovani</p>
-        </div>
-      </div>
-    </section>
+                <div class="event-card">
+                    <div class="time-box"><span>09:25</span></div>
+                    <div class="event-info">
+                        <span class="event-title">Momento de Entrega</span>
+                        <div class="event-notes">
+                            <b>Ofertório:</b> Evanildo<br>
+                            <b>Louvores:</b> Teu Santo Nome, Santo Pra Sempre
+                        </div>
+                    </div>
+                </div>
 
-  </main>
+                <div class="event-card highlight-card">
+                    <div class="time-box"><span>09:55</span></div>
+                    <div class="event-info">
+                        <span class="event-title">🌊 Batismo & Apelo</span>
+                        <span class="event-person">Pr. Robson & Emanuely</span>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="time-box"><span>10:10</span></div>
+                    <div class="event-info">
+                        <span class="event-title">Mensagem</span>
+                        <span class="event-person">Guilherme da Silva</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <h2>Escola Sabatina</h2>
+                <div class="line"></div>
+            </div>
+            <div class="timeline">
+                <div class="event-card">
+                    <div class="time-box"><span>11:20</span></div>
+                    <div class="event-info">
+                        <span class="event-title">Recapitulando a Lição</span>
+                        <span class="event-person">Classes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-header">
+                <h2>Equipes</h2>
+                <div class="line"></div>
+            </div>
+            <div class="teams-container">
+                <div class="team-mini-card">
+                    <h4>Anciãos</h4>
+                    <p>Gaspar, Vladimir</p>
+                </div>
+                <div class="team-mini-card">
+                    <h4>Recepção</h4>
+                    <p>Cleide, Elias, Nely</p>
+                </div>
+                <div class="team-mini-card full-width">
+                    <h4>Diaconato</h4>
+                    <p>Romilson, Mauro, Marcos, Jorge, Jose, Letícia, Nice, Mirian</p>
+                </div>
+                <div class="team-mini-card full-width">
+                    <h4>Som & Transmissão</h4>
+                    <p>Gustavo, Hadassa, Renan, Letícia, Pedro</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            IASD Campo Grande &copy; 2026
+        </footer>
+    </div>
+
 </body>
 </html>
