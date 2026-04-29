@@ -30,19 +30,19 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
-        /* Estilos para as áreas coloridas */
-        .elder-card-blue { border-left: 6px solid #3b82f6; background-color: #eff6ff; }
-        .elder-card-purple { border-left: 6px solid #a855f7; background-color: #faf5ff; }
-        .elder-card-emerald { border-left: 6px solid #10b981; background-color: #ecfdf5; }
-        .elder-card-orange { border-left: 6px solid #f97316; background-color: #fff7ed; }
-        .elder-card-indigo { border-left: 6px solid #6366f1; background-color: #eef2ff; }
-        .elder-card-cyan { border-left: 6px solid #06b6d4; background-color: #ecfeff; }
-        .elder-card-rose { border-left: 6px solid #f43f5e; background-color: #fff1f2; }
-        .elder-card-amber { border-left: 6px solid #f59e0b; background-color: #fffbeb; }
-        .elder-card-teal { border-left: 6px solid #14b8a6; background-color: #f0fdfa; }
-        .elder-card-pink { border-left: 6px solid #ec4899; background-color: #fdf2f8; }
-        .elder-card-sky { border-left: 6px solid #0ea5e9; background-color: #f0f9ff; }
-        .elder-card-violet { border-left: 6px solid #8b5cf6; background-color: #f5f3ff; }
+        /* Estilos vibrantes para as áreas coloridas */
+        .elder-card-blue { border-left: 6px solid #2563eb; background: linear-gradient(to right, #eff6ff, white); }
+        .elder-card-purple { border-left: 6px solid #9333ea; background: linear-gradient(to right, #faf5ff, white); }
+        .elder-card-emerald { border-left: 6px solid #059669; background: linear-gradient(to right, #ecfdf5, white); }
+        .elder-card-orange { border-left: 6px solid #ea580c; background: linear-gradient(to right, #fff7ed, white); }
+        .elder-card-indigo { border-left: 6px solid #4f46e5; background: linear-gradient(to right, #eef2ff, white); }
+        .elder-card-cyan { border-left: 6px solid #0891b2; background: linear-gradient(to right, #ecfeff, white); }
+        .elder-card-rose { border-left: 6px solid #e11d48; background: linear-gradient(to right, #fff1f2, white); }
+        .elder-card-amber { border-left: 6px solid #d97706; background: linear-gradient(to right, #fffbeb, white); }
+        .elder-card-teal { border-left: 6px solid #0d9488; background: linear-gradient(to right, #f0fdfa, white); }
+        .elder-card-pink { border-left: 6px solid #db2777; background: linear-gradient(to right, #fdf2f8, white); }
+        .elder-card-sky { border-left: 6px solid #0284c7; background: linear-gradient(to right, #f0f9ff, white); }
+        .elder-card-violet { border-left: 6px solid #7c3aed; background: linear-gradient(to right, #f5f3ff, white); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased p-4 md:p-8">
@@ -76,8 +76,9 @@
                     >
                 </div>
                 
-                <div class="flex items-center bg-white rounded-xl border border-slate-200 p-1 shadow-sm overflow-hidden">
+                <div class="flex items-center bg-white rounded-xl border border-slate-200 p-1 shadow-sm overflow-hidden" id="monthTabs">
                     <button onclick="changeMonth(0)" class="month-btn active px-6 py-2 text-sm font-bold rounded-lg transition-all">Abril</button>
+                    <button onclick="changeMonth(1)" class="month-btn px-6 py-2 text-sm font-bold rounded-lg transition-all">Maio</button>
                 </div>
             </div>
 
@@ -130,7 +131,7 @@
     </div>
 
     <script>
-        const months = ["Abril"];
+        const months = ["Abril", "Maio"];
         let activeMonth = 0;
         let activeView = 'escala';
         let searchEscala = "";
@@ -151,7 +152,23 @@
             { date: "22/04", day: "QUA", names: ["Patricia"], month: 0, orador: "Ministério da Mulher", info: "Culto de Oração" },
             { date: "25/04", day: "SAB", names: ["Luiz", "Vitor"], month: 0, orador: "Pr Robson Menezes", info: "Culto Divino / 14h Partilha Família" },
             { date: "26/04", day: "DOM", names: ["Patricia", "Luiz"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
-            { date: "29/04", day: "QUA", names: ["Sidney"], month: 0, orador: "Pr Robson Menezes", info: "Culto de Oração" }
+            { date: "29/04", day: "QUA", names: ["Sidney"], month: 0, orador: "Pr Robson Menezes", info: "Culto de Oração" },
+
+            // MAIO 2026
+            { date: "02/05", day: "SAB", names: ["Eliza", "Vladimir"], month: 1, orador: "Barbara Galantini", info: "Culto Divino" },
+            { date: "03/05", day: "DOM", names: ["Evanildo", "Vitor"], month: 1, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "06/05", day: "QUA", names: ["Vitor"], month: 1, orador: "Min. Saúde", info: "Culto de Saúde" },
+            { date: "09/05", day: "SAB", names: ["Anderson", "Deivison"], month: 1, orador: "Ancionato", info: "Culto Divino" },
+            { date: "10/05", day: "DOM", names: ["Sidney", "Luiz"], month: 1, orador: "Ancionato", info: "Culto Noturno" },
+            { date: "13/05", day: "QUA", names: ["Evanildo"], month: 1, orador: "Ancionato", info: "Culto de Oração" },
+            { date: "16/05", day: "SAB", names: ["Vladimir", "Gaspar"], month: 1, orador: "Ancionato", info: "Culto Divino" },
+            { date: "17/05", day: "DOM", names: ["Vitor", "Eliza"], month: 1, orador: "Ancionato", info: "Culto Noturno" },
+            { date: "20/05", day: "QUA", names: ["Gaspar"], month: 1, orador: "Ancionato", info: "Culto de Oração" },
+            { date: "23/05", day: "SAB", names: ["Deivison", "Felipe"], month: 1, orador: "Ancionato", info: "Culto Divino" },
+            { date: "24/05", day: "DOM", names: ["Luiz", "Anderson"], month: 1, orador: "Ancionato", info: "Culto Noturno" },
+            { date: "27/05", day: "QUA", names: ["Vladimir"], month: 1, orador: "Ancionato", info: "Culto de Oração" },
+            { date: "30/05", day: "SAB", names: ["Gaspar", "Patricia"], month: 1, orador: "Ancionato", info: "Culto Divino" },
+            { date: "31/05", day: "DOM", names: ["Luiz", "Vladimir"], month: 1, orador: "Ancionato", info: "Culto Noturno" }
         ];
 
         const eldersData = [
@@ -193,13 +210,14 @@
             { depto: "Saúde e Temperança", nome: "Ruth Albuquerque Carvalho", icon: "stethoscope" },
             { depto: "Liberdade Religiosa", nome: "Gustavo Schutz de Oliveira", icon: "landmark" },
             { depto: "Multimídia (Sonoplastia)", nome: "Pedro Rafael Thomé Lopes Machado", icon: "headphones" },
-            { depto: "Ministério da Oração", nome: "Flavia Estefhane de Almeida Coimbra", icon: "prayer-svg" }, // Identificador especial
+            { depto: "Ministério da Oração", nome: "Flavia Estefhane de Almeida Coimbra", icon: "prayer-svg" },
             { depto: "Comunicação", nome: "Luiz Felipe Mattos da Silva", icon: "megaphone" },
             { depto: "MAP (Possibilidades)", nome: "Elisangela Moreira dos Santos Pintor", icon: "accessibility" },
             { depto: "Publicações", nome: "Célia Valentina Mattos da Silva", icon: "book" }
         ];
 
-        const prayerIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pray"><path d="M12 5V3M12 5a3 3 0 1 0 0 6 3 3 0 1 0 0-6Z"/><path d="m15.5 13-2.5 4v5M8.5 13l2.5 4v5M2 13s2-2 5-2 5 2 5 2v4M22 13s-2-2-5-2-5 2-5 2v4"/></svg>`;
+        // SVG personalizado para garantir exibição do ícone de oração
+        const prayerIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-prayer"><path d="M12 5V3M12 5a3 3 0 1 0 0 6 3 3 0 1 0 0-6Z"/><path d="m15.5 13-2.5 4v5M8.5 13l2.5 4v5M2 13s2-2 5-2 5 2 5 2v4M22 13s-2-2-5-2-5 2-5 2v4"/></svg>`;
 
         function getDayStyle(day) {
             switch (day) {
@@ -233,11 +251,12 @@
         function renderSchedule() {
             const grid = document.getElementById('scheduleGrid');
             const filtered = scheduleData.filter(item => {
+                const matchesMonth = item.month === activeMonth;
                 const matchesSearch = !searchEscala || 
                     item.names.some(n => n.toLowerCase().includes(searchEscala.toLowerCase())) ||
                     item.orador.toLowerCase().includes(searchEscala.toLowerCase()) ||
                     (item.info && item.info.toLowerCase().includes(searchEscala.toLowerCase()));
-                return matchesSearch;
+                return matchesMonth && matchesSearch;
             });
 
             grid.innerHTML = filtered.map(item => `
@@ -249,7 +268,7 @@
                         </div>
                         <div class="flex-grow">
                             <p class="font-bold text-slate-700 text-sm leading-tight">${item.info || 'Culto de Rotina'}</p>
-                            <p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">Abril • 2026</p>
+                            <p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">${months[activeMonth]} • 2026</p>
                         </div>
                     </div>
                     <div class="p-4 space-y-4">
@@ -286,7 +305,7 @@
 
             grid.innerHTML = filtered.map(elder => {
                 return `
-                    <div class="rounded-2xl shadow-sm hover:shadow-md transition-all overflow-hidden elder-card-${elder.color} border border-slate-200 group">
+                    <div class="rounded-2xl shadow-sm hover:shadow-md transition-all overflow-hidden border border-slate-200 elder-card-${elder.color} group">
                         <div class="p-5">
                             <div class="flex items-center justify-between mb-4">
                                 <h3 class="font-bold text-lg text-slate-800 leading-tight">${elder.name}</h3>
@@ -331,7 +350,10 @@
         }
 
         function changeMonth(idx) {
-            // Apenas Abril disponível agora
+            activeMonth = idx;
+            document.querySelectorAll('.month-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === idx);
+            });
             render();
         }
 
