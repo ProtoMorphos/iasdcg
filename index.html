@@ -83,7 +83,6 @@
             background: var(--border);
         }
 
-        /* Programação Timeline */
         .event-card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -127,7 +126,6 @@
             opacity: 0.9;
         }
 
-        /* Detalhes extras dentro do card */
         .event-notes {
             margin-top: 12px;
             padding: 12px;
@@ -139,13 +137,11 @@
 
         .event-notes b { color: var(--secondary); font-weight: 600; }
 
-        /* Estilo para Batismo */
-        .batismo-card {
+        .special-card {
             background: linear-gradient(135deg, #1e1b4b 0%, #1e293b 100%);
             border: 1px solid rgba(6, 182, 212, 0.4);
         }
 
-        /* Grade de Equipes */
         .team-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -206,7 +202,7 @@
             <div class="logo-area">
                 <h1>IASD Campo Grande</h1>
             </div>
-            <div class="date-pill">25 de Abril de 2026 • Sábado</div>
+            <div class="date-pill">09 de Maio de 2026 • Sábado</div>
         </header>
 
         <h2 class="section-title">Culto Divino</h2>
@@ -215,7 +211,7 @@
             <div class="event-time">09:00</div>
             <div class="event-content">
                 <span class="event-label">Boas-vindas & Oração</span>
-                <span class="event-person">Participação: <span class="person-tag">Vitor Nascimento</span></span>
+                <span class="event-person">Participação: <span class="person-tag">Anderson Assumpção</span></span>
             </div>
         </div>
 
@@ -223,15 +219,16 @@
             <div class="event-time">09:05</div>
             <div class="event-content">
                 <span class="event-label">Anúncios</span>
-                <span class="event-person">Apresentação: <span class="person-tag">Luiz e Renata</span></span>
+                <span class="event-person">Apresentação: <span class="person-tag">Ana Cassimiro e Pedro Rafael</span></span>
             </div>
         </div>
 
-        <div class="event-card">
+        <div class="event-card special-card">
             <div class="event-time">09:10</div>
             <div class="event-content">
-                <span class="event-label">Adoração Infantil</span>
-                <span class="event-person">História: <span class="person-tag">Renata</span></span>
+                <span class="event-label">👶 Dedicação de Bebê</span>
+                <span class="event-person">Ministrante: <span class="person-tag">Pastor Robson</span></span>
+                <span class="event-person" style="display:block; margin-top:4px">Momento: <span class="person-tag">Adoração Infantil</span></span>
             </div>
         </div>
 
@@ -240,9 +237,8 @@
             <div class="event-content">
                 <span class="event-label">Momento de Entrega</span>
                 <div class="event-notes">
-                    <b>Ofertório:</b> Sidnei<br>
-                    <b>Oração Intercessora:</b> Railda<br>
-                    <b>Louvores:</b> Eu só quero estar onde estás (HA), Sou de Jesus, Dez mil razões
+                    <b>Ofertório & Intercessora:</b> Pastor Pedro<br>
+                    <b>Louvores:</b> Grande Alegria (HA 451), Um Milagre (Adoradores 2), Grande é o Senhor
                 </div>
             </div>
         </div>
@@ -251,49 +247,53 @@
             <div class="event-time">09:50</div>
             <div class="event-content">
                 <span class="event-label">Mensagem</span>
-                <span class="event-person">Orador: <span class="person-tag">Pr. Robson Menezes</span></span>
-                <div class="event-notes" style="border-color: var(--secondary)">
-                    <b>Tema:</b> Identidade
-                </div>
+                <span class="event-person">Orador: <span class="person-tag">Pastor Robson Menezes</span></span>
             </div>
         </div>
 
         <div class="event-card">
             <div class="event-time">10:35</div>
             <div class="event-content">
-                <span class="event-label">Orientações de Saída</span>
-                <span class="event-person">Anunciante: <span class="person-tag">Luiz Silva</span></span>
+                <span class="event-label">Orientações Finais</span>
+                <span class="event-person">Anunciante: <span class="person-tag">Sidney Trindade</span></span>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-time">10:40</div>
+            <div class="event-content">
+                <span class="event-label">Reunião Administrativa</span>
             </div>
         </div>
 
         <h2 class="section-title">Escola Sabatina</h2>
 
         <div class="event-card">
-            <div class="event-time">10:50</div>
+            <div class="event-time">11:10</div>
             <div class="event-content">
                 <span class="event-label">Boas-vindas</span>
-                <span class="event-person">Responsável: <span class="person-tag">Unidade Shalom / Prof. Sidney</span></span>
+                <span class="event-person">Unidade: <span class="person-tag">Remidos / Prof. David</span></span>
             </div>
         </div>
 
         <div class="event-card">
-            <div class="event-time">10:52</div>
+            <div class="event-time">11:12</div>
             <div class="event-content">
                 <span class="event-label">Louvores</span>
-                <span class="event-person">Músicas: <span class="person-tag">(51 HA) Dá-me a Bíblia / (53 HA) Que diz a Bíblia</span></span>
+                <span class="event-person">Músicas: <span class="person-tag">(357 HA) Bendita hora de Oração / (366 HA) No Jardim</span></span>
             </div>
         </div>
 
         <div class="event-card">
-            <div class="event-time">11:02</div>
+            <div class="event-time">11:22</div>
             <div class="event-content">
                 <span class="event-label">Informativo Mundial</span>
-                <span class="event-person">Apresentação: <span class="person-tag">Unidade Shalom / Prof. Sidney</span></span>
+                <span class="event-person">Apresentação: <span class="person-tag">Shalom / Prof. Sidney</span></span>
             </div>
         </div>
 
         <div class="event-card">
-            <div class="event-time">11:05</div>
+            <div class="event-time">11:27</div>
             <div class="event-content">
                 <span class="event-label">Companheirismo</span>
                 <span class="event-person">Momento de Pastoreio nas Unidades</span>
@@ -301,14 +301,14 @@
         </div>
 
         <div class="event-card">
-            <div class="event-time">11:15</div>
+            <div class="event-time">11:32</div>
             <div class="event-content">
                 <span class="event-label">Minutos Missionários</span>
             </div>
         </div>
 
         <div class="event-card">
-            <div class="event-time">11:30</div>
+            <div class="event-time">11:42</div>
             <div class="event-content">
                 <span class="event-label">Recapitulando a Lição</span>
                 <span class="event-person">Estudo em Classe</span>
@@ -316,7 +316,7 @@
         </div>
 
         <div class="event-card">
-            <div class="event-time">12:00</div>
+            <div class="event-time">12:15</div>
             <div class="event-content">
                 <span class="event-label">Encerramento</span>
             </div>
@@ -326,35 +326,32 @@
         
         <div class="team-grid">
             <div class="team-card">
-                <h4>Anciões</h4>
-                <p>Luiz Silva, Vitor Nascimento</p>
+                <h4>Anciãos</h4>
+                <p>Anderson Assumpção, Sidney Trindade</p>
             </div>
             
             <div class="team-card">
                 <h4>Recepção</h4>
-                <p>Marta, Deise, Ingrid</p>
+                <p>Clara, Dayse, Cátia</p>
             </div>
 
             <div class="team-card">
                 <h4>Diaconato</h4>
-                <p><b>Diáconos:</b> William Rezende (Coord.), Abelardo Pereira, Leandro, Witnei Cesar, Ismael Levy</p>
-                <p style="margin-top: 8px;"><b>Diaconisas:</b> Sueli (Coord.), Zilda, Ceia</p>
+                <p><b>Diáconos:</b> Marcelo Maravilha (Coord.), Marcos Maravilha, Eduardo Santos, Edson Brasil</p>
+                <p style="margin-top: 8px;"><b>Diaconisas:</b> Cleide (Coord.), Railda, Sueli</p>
             </div>
 
             <div class="team-card">
                 <h4>Música</h4>
-                <p><b>Vocal:</b> Alexandra (Soprano), Hadassa (Soprano), Iale (Contralto), Ádla (Contralto), Max (Tenor)</p>
-                <p style="margin-top: 8px;"><b>Banda:</b> Giovani (Piano), Josué (Violão), Nathan (Bateria), Alan (Baixo), Ananias (Guitarra)</p>
+                <p><b>Vocal:</b> Pr Victor Elias (Minist.), Patrícia, Emanuely, Elisama, Estéfani, Ismael</p>
+                <p style="margin-top: 8px;"><b>Banda:</b> Giovani (Teclado), Josué (Bateria), Ananias (Guitarra), Henrique (Violão), Alan (Baixo)</p>
             </div>
 
             <div class="team-card">
-                <h4>Som & Projeção</h4>
+                <h4>Comunicação & Multimídia</h4>
                 <div class="tech-list">
-                    <div class="tech-item"><span>Mesa</span>Gabi</div>
-                    <div class="tech-item"><span>PC</span>Renan</div>
-                    <div class="tech-item"><span>Live</span>Renato</div>
-                    <div class="tech-item"><span>Câmeras</span>Davi</div>
-                    <div class="tech-item"><span>Suporte</span>Pedro</div>
+                    <div class="tech-item"><span>Responsáveis</span>Ana Cassimiro</div>
+                    <div class="tech-item"><span>Responsáveis</span>Pedro Rafael</div>
                 </div>
             </div>
         </div>
