@@ -3,130 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão de Anciãos e Oficiais - 2026</title>
+    <title>Gestão da Igreja 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        
         .nav-btn.active { border-bottom: 3px solid #2563eb; color: #1e40af; }
-        
-        /* Ajuste de contraste nos botões de mês */
-        .month-btn.active { 
-            background-color: #1e40af !important; 
-            color: white !important; 
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); 
-        }
-        .month-btn.active:hover { 
-            background-color: #1e3a8a !important; 
-            color: white !important; 
-        }
-        .month-btn:not(.active):hover { 
-            background-color: #e2e8f0; 
-            color: #1e293b; 
-        }
-
+        .month-btn.active { background-color: #1e40af !important; color: white !important; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .month-btn:not(.active) { color: #475569; }
+        .month-btn:not(.active):hover { background-color: #f1f5f9; color: #1e293b; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Estilos vibrantes para as áreas coloridas */
-        .elder-card-blue { border-left: 6px solid #2563eb; background: linear-gradient(to right, #eff6ff, white); }
-        .elder-card-purple { border-left: 6px solid #9333ea; background: linear-gradient(to right, #faf5ff, white); }
-        .elder-card-emerald { border-left: 6px solid #059669; background: linear-gradient(to right, #ecfdf5, white); }
-        .elder-card-orange { border-left: 6px solid #ea580c; background: linear-gradient(to right, #fff7ed, white); }
-        .elder-card-indigo { border-left: 6px solid #4f46e5; background: linear-gradient(to right, #eef2ff, white); }
-        .elder-card-cyan { border-left: 6px solid #0891b2; background: linear-gradient(to right, #ecfeff, white); }
-        .elder-card-rose { border-left: 6px solid #e11d48; background: linear-gradient(to right, #fff1f2, white); }
-        .elder-card-amber { border-left: 6px solid #d97706; background: linear-gradient(to right, #fffbeb, white); }
-        .elder-card-teal { border-left: 6px solid #0d9488; background: linear-gradient(to right, #f0fdfa, white); }
-        .elder-card-pink { border-left: 6px solid #db2777; background: linear-gradient(to right, #fdf2f8, white); }
-        .elder-card-sky { border-left: 6px solid #0284c7; background: linear-gradient(to right, #f0f9ff, white); }
-        .elder-card-violet { border-left: 6px solid #7c3aed; background: linear-gradient(to right, #f5f3ff, white); }
+        .elder-card-blue { border-top: 5px solid #2563eb; background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); }
+        .elder-card-purple { border-top: 5px solid #9333ea; background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%); }
+        .elder-card-emerald { border-top: 5px solid #059669; background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%); }
+        .elder-card-orange { border-top: 5px solid #ea580c; background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%); }
+        .elder-card-indigo { border-top: 5px solid #4f46e5; background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%); }
+        .elder-card-cyan { border-top: 5px solid #0891b2; background: linear-gradient(135deg, #ecfeff 0%, #ffffff 100%); }
+        .elder-card-rose { border-top: 5px solid #e11d48; background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%); }
+        .elder-card-amber { border-top: 5px solid #d97706; background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%); }
+        .elder-card-teal { border-top: 5px solid #0d9488; background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%); }
+        .elder-card-pink { border-top: 5px solid #db2777; background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 100%); }
+        .elder-card-sky { border-top: 5px solid #0284c7; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); }
+        .elder-card-violet { border-top: 5px solid #7c3aed; background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased p-4 md:p-8">
-
     <div class="max-w-5xl mx-auto">
-        <!-- Cabeçalho -->
         <header class="mb-8 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
             <div>
                 <h1 class="text-3xl font-bold text-slate-800 tracking-tight">Gestão da Igreja 2026</h1>
                 <p class="text-slate-500 mt-1">Planeamento, Escalas e Liderança</p>
             </div>
-            
-            <!-- Navegação de Abas Principais -->
             <nav class="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar">
-                <button onclick="setView('escala')" id="nav-escala" class="nav-btn active pb-2 font-semibold text-slate-600 transition-all whitespace-nowrap">Escala de Cultos</button>
-                <button onclick="setView('departamentos')" id="nav-departamentos" class="nav-btn pb-2 font-semibold text-slate-600 transition-all whitespace-nowrap">Áreas (Anciãos)</button>
-                <button onclick="setView('oficiais')" id="nav-oficiais" class="nav-btn pb-2 font-semibold text-slate-600 transition-all whitespace-nowrap">Oficiais / Líderes</button>
+                <button onclick="setView('escala')" id="nav-escala" class="nav-btn active pb-2 font-semibold transition-all whitespace-nowrap">Escala de Cultos</button>
+                <button onclick="setView('departamentos')" id="nav-departamentos" class="nav-btn pb-2 font-semibold transition-all whitespace-nowrap">Áreas (Anciãos)</button>
+                <button onclick="setView('oficiais')" id="nav-oficiais" class="nav-btn pb-2 font-semibold transition-all whitespace-nowrap">Oficiais / Líderes</button>
             </nav>
         </header>
 
-        <!-- Seção da Escala de Cultos -->
         <div id="section-escala">
             <div class="flex flex-col md:flex-row gap-4 mb-6">
                 <div class="relative flex-grow">
                     <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                    <input 
-                        type="text" 
-                        id="searchInputEscala"
-                        placeholder="Pesquisar ancião ou orador..." 
-                        class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm"
-                    >
+                    <input type="text" id="searchInputEscala" placeholder="Pesquisar ancião ou orador..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm">
                 </div>
-                
                 <div class="flex items-center bg-white rounded-xl border border-slate-200 p-1 shadow-sm overflow-hidden" id="monthTabs">
                     <button onclick="changeMonth(0)" class="month-btn active px-6 py-2 text-sm font-bold rounded-lg transition-all">Abril</button>
                     <button onclick="changeMonth(1)" class="month-btn px-6 py-2 text-sm font-bold rounded-lg transition-all">Maio</button>
                 </div>
             </div>
-
-            <div class="flex flex-wrap gap-4 mb-6 text-xs font-bold uppercase tracking-wider text-slate-500 px-2">
-                <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-blue-500"></div> Quarta-feira</div>
-                <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-emerald-500"></div> Sábado</div>
-                <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-rose-500"></div> Domingo</div>
-            </div>
-
             <div id="scheduleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </div>
 
-        <!-- Seção de Áreas (Anciãos) -->
         <div id="section-departamentos" class="hidden">
             <div class="mb-6 relative">
                 <i data-lucide="filter" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                <input 
-                    type="text" 
-                    id="searchInputDepto"
-                    placeholder="Filtrar ancião ou área de atuação..." 
-                    class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm"
-                >
+                <input type="text" id="searchInputDepto" placeholder="Filtrar ancião ou área de atuação..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm">
             </div>
             <div id="deptoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
 
-        <!-- Oficiais / Líderes -->
         <div id="section-oficiais" class="hidden">
             <div class="mb-6 relative">
                 <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                <input 
-                    type="text" 
-                    id="searchInputOficiais"
-                    placeholder="Buscar líder ou departamento..." 
-                    class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm"
-                >
+                <input type="text" id="searchInputOficiais" placeholder="Buscar líder ou departamento..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm">
             </div>
             <div id="oficiaisGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </div>
 
-        <!-- Rodapé -->
         <footer class="mt-12 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
             <p>© 2026 Gestão Eclesiástica • Secretaria da Igreja</p>
-            <div class="flex flex-wrap justify-center gap-6 mt-4">
-                <div class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-blue-500"></i> Liderança Ativa</div>
-                <div class="flex items-center gap-1.5"><i data-lucide="award" class="w-4 h-4 text-amber-500"></i> Oficiais 2026</div>
-                <div class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-emerald-500"></i> Ministério Unificado</div>
-            </div>
         </footer>
     </div>
 
@@ -140,35 +88,35 @@
 
         const scheduleData = [
             // ABRIL 2026
-            { date: "01/04", day: "QUA", names: ["Felipe"], month: 0, orador: "Pr Robson Menezes / ARS", info: "SEMANA SANTA" },
-            { date: "04/04", day: "SAB", names: ["Vladimir", "Patricia"], month: 0, orador: "Pr Robson Menezes / ARS", info: "SEMANA SANTA / Culto Jovem" },
-            { date: "05/04", day: "DOM", names: ["Gaspar", "Evanildo"], month: 0, orador: "Pr Robson Menezes", info: "Comissão de Igreja" },
-            { date: "08/04", day: "QUA", names: ["Eliza"], month: 0, orador: "Ministério da Criança", info: "Culto KIDS" },
-            { date: "11/04", day: "SAB", names: ["Evanildo", "Marcio"], month: 0, orador: "Pr Robson Menezes", info: "CEIA DO SENHOR / 17h Cantata Páscoa" },
-            { date: "12/04", day: "DOM", names: ["Eliza", "Felipe"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
-            { date: "15/04", day: "QUA", names: ["Marcio"], month: 0, orador: "Min Adolescentes", info: "Culto TEEN" },
-            { date: "18/04", day: "SAB", names: ["Gaspar", "Sidney"], month: 0, orador: "Guilherme (Valores Eternos)", info: "MORDOMIA TEEN / Culto Jovem" },
-            { date: "19/04", day: "DOM", names: ["Marcio", "Gaspar"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
-            { date: "22/04", day: "QUA", names: ["Patricia"], month: 0, orador: "Ministério da Mulher", info: "Culto de Oração" },
-            { date: "25/04", day: "SAB", names: ["Luiz", "Vitor"], month: 0, orador: "Pr Robson Menezes", info: "Culto Divino / 14h Partilha Família" },
-            { date: "26/04", day: "DOM", names: ["Patricia", "Luiz"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
-            { date: "29/04", day: "QUA", names: ["Sidney"], month: 0, orador: "Pr Robson Menezes", info: "Culto de Oração" },
+            { date: "01/04", day: "QUA", names: ["Felipe Ferreira Coimbra"], month: 0, orador: "Pr Robson Menezes / ARS", info: "SEMANA SANTA" },
+            { date: "04/04", day: "SAB", names: ["Vladimir de Paula", "Patrícia Miguel dos Santos"], month: 0, orador: "Pr Robson Menezes / ARS", info: "SEMANA SANTA / Culto Jovem" },
+            { date: "05/04", day: "DOM", names: ["Anderson Gaspar Cipriano", "Evanildo Silva Andrade Filho"], month: 0, orador: "Pr Robson Menezes", info: "Comissão de Igreja" },
+            { date: "08/04", day: "QUA", names: ["Eliza de Jesus Rosa"], month: 0, orador: "Ministério da Criança", info: "Culto KIDS" },
+            { date: "11/04", day: "SAB", names: ["Evanildo Silva Andrade Filho", "Marcio Roberto Brandão"], month: 0, orador: "Pr Robson Menezes", info: "CEIA DO SENHOR / 17h Cantata Páscoa" },
+            { date: "12/04", day: "DOM", names: ["Eliza de Jesus Rosa", "Felipe Ferreira Coimbra"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "15/04", day: "QUA", names: ["Marcio Roberto Brandão"], month: 0, orador: "Min Adolescentes", info: "Culto TEEN" },
+            { date: "18/04", day: "SAB", names: ["Anderson Gaspar Cipriano", "Sidney Trindade Paixão"], month: 0, orador: "Guilherme (Valores Eternos)", info: "MORDOMIA TEEN / Culto Jovem" },
+            { date: "19/04", day: "DOM", names: ["Marcio Roberto Brandão", "Anderson Gaspar Cipriano"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "22/04", day: "QUA", names: ["Patrícia Miguel dos Santos"], month: 0, orador: "Ministério da Mulher", info: "Culto de Oração" },
+            { date: "25/04", day: "SAB", names: ["José Luiz da Silva", "Vitor Bruno do Nascimento"], month: 0, orador: "Pr Robson Menezes", info: "Culto Divino / 14h Partilha Família" },
+            { date: "26/04", day: "DOM", names: ["Patrícia Miguel dos Santos", "José Luiz da Silva"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "29/04", day: "QUA", names: ["Sidney Trindade Paixão"], month: 0, orador: "Pr Robson Menezes", info: "Culto de Oração" },
 
             // MAIO 2026
-            { date: "02/05", day: "SAB", names: ["Eliza", "Vladimir"], month: 1, orador: "Barbara Galantini", info: "Culto Divino" },
-            { date: "03/05", day: "DOM", names: ["Evanildo", "Vitor"], month: 1, orador: "Pr Robson Menezes", info: "Culto Noturno" },
-            { date: "06/05", day: "QUA", names: ["Vitor"], month: 1, orador: "Min. Saúde", info: "Culto de Saúde" },
-            { date: "09/05", day: "SAB", names: ["Anderson", "Deivison"], month: 1, orador: "Ancionato", info: "Culto Divino" },
-            { date: "10/05", day: "DOM", names: ["Sidney", "Luiz"], month: 1, orador: "Ancionato", info: "Culto Noturno" },
-            { date: "13/05", day: "QUA", names: ["Evanildo"], month: 1, orador: "Ancionato", info: "Culto de Oração" },
-            { date: "16/05", day: "SAB", names: ["Vladimir", "Gaspar"], month: 1, orador: "Ancionato", info: "Culto Divino" },
-            { date: "17/05", day: "DOM", names: ["Vitor", "Eliza"], month: 1, orador: "Ancionato", info: "Culto Noturno" },
-            { date: "20/05", day: "QUA", names: ["Gaspar"], month: 1, orador: "Ancionato", info: "Culto de Oração" },
-            { date: "23/05", day: "SAB", names: ["Deivison", "Felipe"], month: 1, orador: "Ancionato", info: "Culto Divino" },
-            { date: "24/05", day: "DOM", names: ["Luiz", "Anderson"], month: 1, orador: "Ancionato", info: "Culto Noturno" },
-            { date: "27/05", day: "QUA", names: ["Vladimir"], month: 1, orador: "Ancionato", info: "Culto de Oração" },
-            { date: "30/05", day: "SAB", names: ["Gaspar", "Patricia"], month: 1, orador: "Ancionato", info: "Culto Divino" },
-            { date: "31/05", day: "DOM", names: ["Luiz", "Vladimir"], month: 1, orador: "Ancionato", info: "Culto Noturno" }
+            { date: "02/05", day: "SAB", names: ["Eliza de Jesus Rosa", "Vladimir de Paula"], month: 1, orador: "Pr Maicon (Deptal Jovens ARS)", info: "Culto Divino / Culto Jovem" },
+            { date: "03/05", day: "DOM", names: ["Evanildo Silva Andrade Filho", "Vitor Bruno do Nascimento"], month: 1, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "06/05", day: "QUA", names: ["Vitor Bruno do Nascimento"], month: 1, orador: "Min. Saúde", info: "Saúde" },
+            { date: "09/05", day: "SAB", names: ["Anderson Assumpção", "Sidney Trindade Paixão"], month: 1, orador: "Pr Robson Menezes", info: "Culto Divino / Culto Jovem" },
+            { date: "10/05", day: "DOM", names: ["Sidney Trindade Paixão", "Patrícia Miguel dos Santos"], month: 1, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "13/05", day: "QUA", names: ["Evanildo Silva Andrade Filho"], month: 1, orador: "Min. Crianças", info: "KIDS" },
+            { date: "16/05", day: "SAB", names: ["Vitor Bruno do Nascimento", "Anderson Gaspar Cipriano"], month: 1, orador: "A. Gaspar", info: "Culto Divino / Culto Jovem" },
+            { date: "17/05", day: "DOM", names: ["Marcio Roberto Brandão", "Eliza de Jesus Rosa"], month: 1, orador: "Pr Robson Menezes", info: "Comissão / Culto Noturno" },
+            { date: "20/05", day: "QUA", names: ["Anderson Gaspar Cipriano"], month: 1, orador: "Min. Adolescentes", info: "TEEN" },
+            { date: "23/05", day: "SAB", names: ["Patrícia Miguel dos Santos", "Deivison Coelho Miguel"], month: 1, orador: "Adriana Cassimiro", info: "Culto Divino / Culto Jovem" },
+            { date: "24/05", day: "DOM", names: ["Deivison Coelho Miguel", "Anderson Assumpção"], month: 1, orador: "Adriana Cassimiro", info: "Congresso Família / Culto Noturno" },
+            { date: "27/05", day: "QUA", names: ["Vladimir de Paula"], month: 1, orador: "Min. da Mulher", info: "Oração" },
+            { date: "30/05", day: "SAB", names: ["Evanildo Silva Andrade Filho", "Felipe Ferreira Coimbra"], month: 1, orador: "Gustavo Schutz (Advogado ARS)", info: "Liberdade Religiosa / Culto Jovem" },
+            { date: "31/05", day: "DOM", names: ["José Luiz da Silva", "Vladimir de Paula"], month: 1, orador: "Pr Robson Menezes", info: "Culto Noturno" }
         ];
 
         const eldersData = [
@@ -210,34 +158,26 @@
             { depto: "Saúde e Temperança", nome: "Ruth Albuquerque Carvalho", icon: "stethoscope" },
             { depto: "Liberdade Religiosa", nome: "Gustavo Schutz de Oliveira", icon: "landmark" },
             { depto: "Multimídia (Sonoplastia)", nome: "Pedro Rafael Thomé Lopes Machado", icon: "headphones" },
-            { depto: "Ministério da Oração", nome: "Flavia Estefhane de Almeida Coimbra", icon: "prayer-svg" },
+            { depto: "Ministério da Oração", nome: "Flavia Estefhane de Almeida Coimbra", icon: "prayer-hands" },
             { depto: "Comunicação", nome: "Luiz Felipe Mattos da Silva", icon: "megaphone" },
             { depto: "MAP (Possibilidades)", nome: "Elisangela Moreira dos Santos Pintor", icon: "accessibility" },
             { depto: "Publicações", nome: "Célia Valentina Mattos da Silva", icon: "book" }
         ];
 
-        // SVG personalizado para garantir exibição do ícone de oração
-        const prayerIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-prayer"><path d="M12 5V3M12 5a3 3 0 1 0 0 6 3 3 0 1 0 0-6Z"/><path d="m15.5 13-2.5 4v5M8.5 13l2.5 4v5M2 13s2-2 5-2 5 2 5 2v4M22 13s-2-2-5-2-5 2-5 2v4"/></svg>`;
-
-        function getDayStyle(day) {
-            switch (day) {
-                case 'QUA': return 'bg-blue-100 text-blue-700 border-blue-200';
-                case 'SAB': return 'bg-emerald-100 text-emerald-700 border-emerald-200';
-                case 'DOM': return 'bg-rose-100 text-rose-700 border-rose-200';
-                default: return 'bg-gray-100 text-gray-700 border-gray-200';
-            }
-        }
+        const prayerHandsSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 8-4-4-4 4M10 16l4 4 4-4M4 8l4-4 4 4M8 16l4 4 4-4"/></svg>`;
 
         function setView(view) {
             activeView = view;
             document.getElementById('section-escala').classList.toggle('hidden', view !== 'escala');
             document.getElementById('section-departamentos').classList.toggle('hidden', view !== 'departamentos');
             document.getElementById('section-oficiais').classList.toggle('hidden', view !== 'oficiais');
-            
-            document.getElementById('nav-escala').classList.toggle('active', view === 'escala');
-            document.getElementById('nav-departamentos').classList.toggle('active', view === 'departamentos');
-            document.getElementById('nav-oficiais').classList.toggle('active', view === 'oficiais');
-            
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.toggle('active', btn.id === `nav-${view}`));
+            render();
+        }
+
+        function changeMonth(idx) {
+            activeMonth = idx;
+            document.querySelectorAll('.month-btn').forEach((btn, i) => btn.classList.toggle('active', i === idx));
             render();
         }
 
@@ -250,128 +190,25 @@
 
         function renderSchedule() {
             const grid = document.getElementById('scheduleGrid');
-            const filtered = scheduleData.filter(item => {
-                const matchesMonth = item.month === activeMonth;
-                const matchesSearch = !searchEscala || 
-                    item.names.some(n => n.toLowerCase().includes(searchEscala.toLowerCase())) ||
-                    item.orador.toLowerCase().includes(searchEscala.toLowerCase()) ||
-                    (item.info && item.info.toLowerCase().includes(searchEscala.toLowerCase()));
-                return matchesMonth && matchesSearch;
-            });
-
-            grid.innerHTML = filtered.map(item => `
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
-                    <div class="flex items-center gap-3 p-4 bg-slate-50/50 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-xl flex flex-col items-center justify-center border font-bold ${getDayStyle(item.day)} shadow-sm">
-                            <span class="text-[10px] uppercase opacity-80 leading-none mb-1">${item.day}</span>
-                            <span class="text-lg leading-none">${item.date.split('/')[0]}</span>
-                        </div>
-                        <div class="flex-grow">
-                            <p class="font-bold text-slate-700 text-sm leading-tight">${item.info || 'Culto de Rotina'}</p>
-                            <p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">${months[activeMonth]} • 2026</p>
-                        </div>
-                    </div>
-                    <div class="p-4 space-y-4">
-                        <div>
-                            <div class="flex items-center gap-2 mb-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                                <i data-lucide="mic-2" class="w-3 h-3"></i> Orador
-                            </div>
-                            <p class="text-sm font-semibold text-blue-700">${item.orador}</p>
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-2 mb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                                <i data-lucide="users" class="w-3 h-3"></i> Anciãos
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                ${item.names.map(name => `
-                                    <span class="px-2 py-1 bg-slate-50 text-slate-600 rounded-lg text-xs font-medium border border-slate-100 flex items-center gap-1">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
-                                        ${name}
-                                    </span>
-                                `).join('')}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
+            const filtered = scheduleData.filter(item => item.month === activeMonth && (!searchEscala || item.names.join(' ').toLowerCase().includes(searchEscala.toLowerCase()) || item.orador.toLowerCase().includes(searchEscala.toLowerCase())));
+            grid.innerHTML = filtered.map(item => `<div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex flex-col items-center justify-center font-bold bg-slate-100 text-slate-700 leading-none"><span>${item.date.split('/')[0]}</span><span class="text-[10px] uppercase">${item.day}</span></div><div><p class="font-bold text-slate-800 leading-tight">${item.info || 'Culto'}</p></div></div><div class="space-y-2 text-sm"><p><span class="text-slate-400 font-bold uppercase text-[10px]">Orador:</span> <span class="font-semibold text-blue-600">${item.orador}</span></p><p><span class="text-slate-400 font-bold uppercase text-[10px]">Anciãos:</span> <span class="text-slate-600">${item.names.join(', ')}</span></p></div></div>`).join('');
         }
 
         function renderDepartments() {
             const grid = document.getElementById('deptoGrid');
-            const filtered = eldersData.filter(elder => 
-                elder.name.toLowerCase().includes(searchDepto.toLowerCase()) || 
-                elder.deptos.some(d => d.toLowerCase().includes(searchDepto.toLowerCase()))
-            );
-
-            grid.innerHTML = filtered.map(elder => {
-                return `
-                    <div class="rounded-2xl shadow-sm hover:shadow-md transition-all overflow-hidden border border-slate-200 elder-card-${elder.color} group">
-                        <div class="p-5">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="font-bold text-lg text-slate-800 leading-tight">${elder.name}</h3>
-                                <div class="p-3 bg-white rounded-xl group-hover:rotate-6 transition-transform shadow-sm">
-                                    <i data-lucide="shield-check" class="w-6 h-6 text-slate-600"></i>
-                                </div>
-                            </div>
-                            <div class="space-y-4">
-                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Departamentos</p>
-                                <div class="flex flex-wrap gap-2">
-                                    ${elder.deptos.map(d => `
-                                        <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-xs font-bold border border-slate-100 shadow-sm">
-                                            ${d}
-                                        </span>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+            const filtered = eldersData.filter(elder => !searchDepto || elder.name.toLowerCase().includes(searchDepto.toLowerCase()) || elder.deptos.join(' ').toLowerCase().includes(searchDepto.toLowerCase()));
+            grid.innerHTML = filtered.map(elder => `<div class="rounded-2xl border border-slate-200 elder-card-${elder.color} p-5 shadow-sm"><h3 class="font-bold text-lg text-slate-800 mb-3">${elder.name}</h3><div class="flex flex-wrap gap-2">${elder.deptos.map(d => `<span class="px-3 py-1 bg-white border border-slate-100 rounded-lg text-xs font-bold text-slate-600 shadow-sm">${d}</span>`).join('')}</div></div>`).join('');
         }
 
         function renderOfficials() {
             const grid = document.getElementById('oficiaisGrid');
-            const filtered = oficiaisData.filter(item => 
-                item.nome.toLowerCase().includes(searchOficiais.toLowerCase()) || 
-                item.depto.toLowerCase().includes(searchOficiais.toLowerCase())
-            );
-
-            grid.innerHTML = filtered.map(item => `
-                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4 hover:border-blue-300 hover:bg-blue-50/10 transition-all group">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
-                        ${item.icon === 'prayer-svg' ? prayerIconSvg : `<i data-lucide="${item.icon || 'star'}" class="w-5 h-5 text-blue-600"></i>`}
-                    </div>
-                    <div>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">${item.depto}</p>
-                        <h4 class="font-bold text-slate-800 leading-tight">${item.nome}</h4>
-                    </div>
-                </div>
-            `).join('');
+            const filtered = oficiaisData.filter(item => !searchOficiais || item.nome.toLowerCase().includes(searchOficiais.toLowerCase()) || item.depto.toLowerCase().includes(searchOficiais.toLowerCase()));
+            grid.innerHTML = filtered.map(item => `<div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4"><div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">${item.icon === 'prayer-hands' ? prayerHandsSvg : `<i data-lucide="${item.icon}" class="w-5 h-5 text-blue-600"></i>`}</div><div><p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${item.depto}</p><h4 class="font-bold text-slate-800 leading-tight">${item.nome}</h4></div></div>`).join('');
         }
 
-        function changeMonth(idx) {
-            activeMonth = idx;
-            document.querySelectorAll('.month-btn').forEach((btn, i) => {
-                btn.classList.toggle('active', i === idx);
-            });
-            render();
-        }
-
-        document.getElementById('searchInputEscala').addEventListener('input', (e) => {
-            searchEscala = e.target.value;
-            render();
-        });
-
-        document.getElementById('searchInputDepto').addEventListener('input', (e) => {
-            searchDepto = e.target.value;
-            render();
-        });
-
-        document.getElementById('searchInputOficiais').addEventListener('input', (e) => {
-            searchOficiais = e.target.value;
-            render();
-        });
-
+        document.getElementById('searchInputEscala').oninput = (e) => { searchEscala = e.target.value; render(); };
+        document.getElementById('searchInputDepto').oninput = (e) => { searchDepto = e.target.value; render(); };
+        document.getElementById('searchInputOficiais').oninput = (e) => { searchOficiais = e.target.value; render(); };
         window.onload = render;
     </script>
 </body>
