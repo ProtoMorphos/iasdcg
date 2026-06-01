@@ -50,9 +50,15 @@
                     <input type="text" id="searchInputEscala" placeholder="Pesquisar ancião ou orador..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm">
                 </div>
                 <div class="flex items-center bg-white rounded-xl border border-slate-200 p-1 shadow-sm overflow-hidden" id="monthTabs">
-                    <button onclick="changeMonth(0)" class="month-btn active px-6 py-2 text-sm font-bold rounded-lg transition-all">Abril</button>
-                    <button onclick="changeMonth(1)" class="month-btn px-6 py-2 text-sm font-bold rounded-lg transition-all">Maio</button>
+                    <button onclick="changeMonth(0)" class="month-btn active px-4 py-2 text-sm font-bold rounded-lg transition-all">Abril</button>
+                    <button onclick="changeMonth(1)" class="month-btn px-4 py-2 text-sm font-bold rounded-lg transition-all">Maio</button>
+                    <button onclick="changeMonth(2)" class="month-btn px-4 py-2 text-sm font-bold rounded-lg transition-all">Junho</button>
                 </div>
+            </div>
+            <div class="flex flex-wrap gap-4 mb-6 text-xs font-bold uppercase tracking-wider text-slate-500 px-2">
+                <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-blue-500"></div> Quarta-feira</div>
+                <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-emerald-500"></div> Sábado</div>
+                <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-rose-500"></div> Domingo</div>
             </div>
             <div id="scheduleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </div>
@@ -79,7 +85,7 @@
     </div>
 
     <script>
-        const months = ["Abril", "Maio"];
+        const months = ["Abril", "Maio", "Junho"];
         let activeMonth = 0;
         let activeView = 'escala';
         let searchEscala = "";
@@ -116,7 +122,21 @@
             { date: "24/05", day: "DOM", names: ["Deivison Coelho Miguel", "Anderson Assumpção"], month: 1, orador: "Adriana Cassimiro", info: "Congresso Família / Culto Noturno" },
             { date: "27/05", day: "QUA", names: ["Vladimir de Paula"], month: 1, orador: "Min. da Mulher", info: "Oração" },
             { date: "30/05", day: "SAB", names: ["Evanildo Silva Andrade Filho", "Felipe Ferreira Coimbra"], month: 1, orador: "Gustavo Schutz (Advogado ARS)", info: "Liberdade Religiosa / Culto Jovem" },
-            { date: "31/05", day: "DOM", names: ["José Luiz da Silva", "Vladimir de Paula"], month: 1, orador: "Pr Robson Menezes", info: "Culto Noturno" }
+            { date: "31/05", day: "DOM", names: ["José Luiz da Silva", "Vladimir de Paula"], month: 1, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+
+            // JUNHO 2026
+            { date: "03/06", day: "QUA", names: ["Felipe Ferreira Coimbra"], month: 2, orador: "Min. Saúde", info: "Culto de Saúde" },
+            { date: "06/06", day: "SAB", names: ["Patrícia Miguel dos Santos", "Marcio Roberto Brandão"], month: 2, orador: "Rebecca Nunes", info: "Culto Divino / Culto Jovem" },
+            { date: "07/06", day: "DOM", names: ["Eliza de Jesus Rosa", "Anderson Gaspar Cipriano"], month: 2, orador: "Rebecca Nunes", info: "Comissão / Culto Noturno" },
+            { date: "10/06", day: "QUA", names: ["Eliza de Jesus Rosa"], month: 2, orador: "Rebecca Nunes", info: "Culto de Oração" },
+            { date: "13/06", day: "SAB", names: ["José Luiz da Silva", "Anderson Gaspar Cipriano"], month: 2, orador: "Rebecca Nunes", info: "Culto Divino / Culto Jovem" },
+            { date: "14/06", day: "DOM", names: ["Anderson Assumpção", "Evanildo Silva Andrade Filho"], month: 2, orador: "Ancionato", info: "Culto Noturno" },
+            { date: "17/06", day: "QUA", names: ["Marcio Roberto Brandão"], month: 2, orador: "Min Adolescentes", info: "Culto TEEN" },
+            { date: "20/06", day: "SAB", names: ["Sidney Trindade Paixão", "Felipe Ferreira Coimbra"], month: 2, orador: "Min. Mordomia", info: "CATRE - PENEDO / Culto Jovem" },
+            { date: "21/06", day: "DOM", names: ["Vladimir de Paula", "Felipe Ferreira Coimbra"], month: 2, orador: "Pr Robson Menezes", info: "Culto Noturno" },
+            { date: "24/06", day: "QUA", names: ["Sidney Trindade Paixão"], month: 2, orador: "Min da Mulher", info: "Culto de Oração" },
+            { date: "27/06", day: "SAB", names: ["Evanildo Silva Andrade Filho", "Vitor Bruno do Nascimento"], month: 2, orador: "Pr Robson Menezes", info: "DIA DO ANCIONATO / Culto Jovem" },
+            { date: "28/06", day: "DOM", names: ["Deivison Coelho Miguel", "José Luiz da Silva"], month: 2, orador: "Pr Robson Menezes", info: "Culto Noturno" }
         ];
 
         const eldersData = [
@@ -166,6 +186,15 @@
 
         const prayerHandsSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 8-4-4-4 4M10 16l4 4 4-4M4 8l4-4 4 4M8 16l4 4 4-4"/></svg>`;
 
+        function getDayStyle(day) {
+            switch (day) {
+                case 'QUA': return 'bg-blue-100 text-blue-700 border-blue-200';
+                case 'SAB': return 'bg-emerald-100 text-emerald-700 border-emerald-200';
+                case 'DOM': return 'bg-rose-100 text-rose-700 border-rose-200';
+                default: return 'bg-gray-100 text-gray-700 border-gray-200';
+            }
+        }
+
         function setView(view) {
             activeView = view;
             document.getElementById('section-escala').classList.toggle('hidden', view !== 'escala');
@@ -190,8 +219,48 @@
 
         function renderSchedule() {
             const grid = document.getElementById('scheduleGrid');
-            const filtered = scheduleData.filter(item => item.month === activeMonth && (!searchEscala || item.names.join(' ').toLowerCase().includes(searchEscala.toLowerCase()) || item.orador.toLowerCase().includes(searchEscala.toLowerCase())));
-            grid.innerHTML = filtered.map(item => `<div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex flex-col items-center justify-center font-bold bg-slate-100 text-slate-700 leading-none"><span>${item.date.split('/')[0]}</span><span class="text-[10px] uppercase">${item.day}</span></div><div><p class="font-bold text-slate-800 leading-tight">${item.info || 'Culto'}</p></div></div><div class="space-y-2 text-sm"><p><span class="text-slate-400 font-bold uppercase text-[10px]">Orador:</span> <span class="font-semibold text-blue-600">${item.orador}</span></p><p><span class="text-slate-400 font-bold uppercase text-[10px]">Anciãos:</span> <span class="text-slate-600">${item.names.join(', ')}</span></p></div></div>`).join('');
+            const filtered = scheduleData.filter(item => item.month === activeMonth && (!searchEscala || item.names.join(' ').toLowerCase().includes(searchEscala.toLowerCase()) || item.orador.toLowerCase().includes(searchEscala.toLowerCase()) || (item.info && item.info.toLowerCase().includes(searchEscala.toLowerCase()))));
+            
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-slate-400">Nenhum resultado para esta pesquisa.</div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
+                    <div class="flex items-center gap-3 p-4 bg-slate-50/50 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-xl flex flex-col items-center justify-center border font-bold ${getDayStyle(item.day)} shadow-sm">
+                            <span class="text-[10px] uppercase opacity-80 leading-none mb-1">${item.day}</span>
+                            <span class="text-lg leading-none">${item.date.split('/')[0]}</span>
+                        </div>
+                        <div class="flex-grow">
+                            <p class="font-bold text-slate-700 text-sm leading-tight">${item.info || 'Culto de Rotina'}</p>
+                            <p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">${months[activeMonth]} • 2026</p>
+                        </div>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                                <i data-lucide="mic-2" class="w-3 h-3"></i> Orador
+                            </div>
+                            <p class="text-sm font-semibold text-blue-700">${item.orador}</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                                <i data-lucide="users" class="w-3 h-3"></i> Anciãos
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                ${item.names.map(name => `
+                                    <span class="px-2 py-1 bg-slate-50 text-slate-600 rounded-lg text-xs font-medium border border-slate-100 flex items-center gap-1">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                                        ${name}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
         function renderDepartments() {
