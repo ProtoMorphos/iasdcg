@@ -74,6 +74,7 @@
                 
                 <div class="flex items-center bg-white rounded-xl border border-slate-200 p-1 shadow-sm overflow-hidden" id="monthTabs">
                     <button onclick="changeMonth(0)" class="month-btn active px-6 py-2 text-sm font-bold rounded-lg transition-all">Setembro</button>
+                    <button onclick="changeMonth(1)" class="month-btn px-6 py-2 text-sm font-bold rounded-lg transition-all">Outubro</button>
                 </div>
             </div>
 
@@ -124,7 +125,7 @@
     </div>
 
     <script>
-        const months = ["Setembro"];
+        const months = ["Setembro", "Outubro"];
         let activeMonth = 0;
         let activeView = 'escala';
         let searchEscala = "";
@@ -134,10 +135,10 @@
         const scheduleData = [
             // SETEMBRO 2026
             { date: "02/09", day: "QUA", names: ["Patrícia Miguel dos Santos"], month: 0, orador: "Min da Saúde", info: "Saúde" },
-            { date: "05/09", day: "SAB", names: ["Deivison Coelho Miguel", "Anderson Assumpção"], month: 0, orador: "Pr. Bruno Maia ARS", info: "Culto Divino / Culto Jovem" },
+            { date: "05/09", day: "SAB", names: ["Deivison Coelho Miguel", "Anderson Assumpção"], month: 0, orador: "Pr. Bruno Maia", info: "Culto Divino / Culto Jovem" },
             { date: "06/09", day: "DOM", names: ["Evanildo Silva Andrade Filho", "Marcio Roberto Brandão"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
             { date: "09/09", day: "QUA", names: ["Vitor Bruno do Nascimento"], month: 0, orador: "Min. Infantil", info: "KIDS" },
-            { date: "12/09", day: "SAB", names: ["Patrícia Miguel dos Santos", "Sidney Trindade Paixão"], month: 0, orador: "Marcia Aparecida", info: "Culto Divino / Culto Jovem" },
+            { date: "12/09", day: "SAB", names: ["Patrícia Miguel dos Santos", "Sidney Trindade Paixão"], month: 0, orador: "Pr. Ricardo Trentino", info: "Culto Divino / Culto Jovem" },
             { date: "13/09", day: "DOM", names: ["Evanildo Silva Andrade Filho", "Deivison Coelho Miguel"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
             { date: "16/09", day: "QUA", names: ["Evanildo Silva Andrade Filho"], month: 0, orador: "Ministério Adolescentes", info: "Soul + Teen" },
             { date: "19/09", day: "SAB", names: ["Anderson Gaspar Cipriano", "Vitor Bruno do Nascimento"], month: 0, orador: "Dia Mundial Desbravadores (Gaspar)", info: "Dia Mundial dos Desbravadores" },
@@ -145,7 +146,10 @@
             { date: "23/09", day: "QUA", names: ["Anderson Gaspar Cipriano"], month: 0, orador: "Pr Fabiano", info: "Semana de Oração" },
             { date: "26/09", day: "SAB", names: ["Evanildo Silva Andrade Filho", "Eliza de Jesus Rosa"], month: 0, orador: "Pr. Fabiano", info: "Semana de Oração / Culto Jovem" },
             { date: "27/09", day: "DOM", names: ["Marcio Roberto Brandão", "Vitor Bruno do Nascimento"], month: 0, orador: "Pr. Robson Menezes", info: "Culto Noturno" },
-            { date: "30/09", day: "QUA", names: ["Vladimir de Paula"], month: 0, orador: "Min. Mulher", info: "M. da Mulher / Culto de Oração" }
+            { date: "30/09", day: "QUA", names: ["Vladimir de Paula"], month: 0, orador: "Min. Mulher", info: "M. da Mulher / Culto de Oração" },
+
+            // OUTUBRO 2026
+            { date: "31/10", day: "SAB", names: ["A definir"], month: 1, orador: "Márcia Aparecida", info: "Culto Divino" }
         ];
 
         const eldersData = [
