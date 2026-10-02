@@ -1,137 +1,99 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão da Igreja 2026</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        
-        .nav-btn.active { border-bottom: 3px solid #2563eb; color: #1e40af; }
-        
-        /* Ajuste de contraste nos botões de mês */
-        .month-btn.active { 
-            background-color: #1e40af !important; 
-            color: white !important; 
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); 
-        }
-        .month-btn:not(.active) { color: #475569; }
-        .month-btn:not(.active):hover { 
-            background-color: #f1f5f9; 
-            color: #1e293b; 
-        }
-
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Estilos vibrantes para as áreas dos anciãos */
-        .elder-card-blue { border-top: 5px solid #2563eb; background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); }
-        .elder-card-purple { border-top: 5px solid #9333ea; background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%); }
-        .elder-card-emerald { border-top: 5px solid #059669; background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%); }
-        .elder-card-orange { border-top: 5px solid #ea580c; background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%); }
-        .elder-card-indigo { border-top: 5px solid #4f46e5; background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%); }
-        .elder-card-cyan { border-top: 5px solid #0891b2; background: linear-gradient(135deg, #ecfeff 0%, #ffffff 100%); }
-        .elder-card-rose { border-top: 5px solid #e11d48; background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%); }
-        .elder-card-amber { border-top: 5px solid #d97706; background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%); }
-        .elder-card-teal { border-top: 5px solid #0d9488; background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%); }
-        .elder-card-pink { border-top: 5px solid #db2777; background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 100%); }
-        .elder-card-sky { border-top: 5px solid #0284c7; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); }
-        .elder-card-violet { border-top: 5px solid #7c3aed; background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09090b">
+<title>Igreja • Central 2026</title>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#09090b;--panel:#111217;--panel2:#171920;--line:#282b34;--text:#f5f5f5;--muted:#969ba8;--lime:#c7f36b;--blue:#6ea8ff;--orange:#ff9c66;--pink:#f18cff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif}button,input{font:inherit}button{cursor:pointer}
+.shell{max-width:1440px;margin:auto;padding:0 34px}.display{font-family:"Space Grotesk",sans-serif}
+.no-scroll::-webkit-scrollbar{display:none}.no-scroll{scrollbar-width:none}
+.top{min-height:410px;background:
+radial-gradient(circle at 78% 15%,rgba(110,168,255,.18),transparent 24rem),
+radial-gradient(circle at 8% 70%,rgba(199,243,107,.08),transparent 23rem),
+linear-gradient(135deg,#0b0c10,#0a0b0e 52%,#10141c);border-bottom:1px solid #20232b;position:relative;overflow:hidden}
+.top:after{content:"2026";position:absolute;right:-25px;bottom:-80px;font:800 280px/1 "Space Grotesk";color:rgba(255,255,255,.025);letter-spacing:-.08em}
+.top-inner{position:relative;z-index:2;padding-top:26px}
+.brand{display:flex;align-items:center;justify-content:space-between}
+.brandmark{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.02em}.brandmark b{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--lime);color:#111}
+.status{font-size:11px;color:#aeb4c0;border:1px solid #292d36;border-radius:999px;padding:7px 11px;display:flex;gap:7px;align-items:center}.dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+.hero{padding:68px 0 70px;max-width:850px}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);font-weight:700}.hero h1{font:600 clamp(42px,7vw,82px)/.95 "Space Grotesk";letter-spacing:-.065em;margin:15px 0}.hero p{color:#a7acb8;font-size:16px;max-width:610px;line-height:1.6;margin:0}
+.command{margin-top:-52px;position:relative;z-index:10}.command-bar{background:#111217;border:1px solid #2a2d36;border-radius:24px;padding:8px;display:grid;grid-template-columns:1fr auto;box-shadow:0 25px 70px rgba(0,0,0,.32)}
+.search{display:flex;align-items:center;gap:12px;padding:12px 15px}.search svg{color:#717785}.search input{width:100%;background:none;border:0;outline:0;color:white}.search input::placeholder{color:#707581}
+.actions{display:flex;gap:6px}.tab{border:0;background:transparent;color:#858b98;border-radius:17px;padding:0 17px;font-weight:700;font-size:12px;transition:.2s;display:flex;align-items:center;gap:8px}.tab.active{background:#f4f4f5;color:#111216}.tab:hover:not(.active){color:white;background:#1b1d23}
+.content{padding:48px 0 100px}.view-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.kicker{color:#707682;text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700}.view-head h2{font:600 31px "Space Grotesk";letter-spacing:-.04em;margin:7px 0 0}.month{color:var(--lime);font-weight:700;font-size:12px;border:1px solid #334025;background:#171d11;border-radius:999px;padding:9px 13px}
+.next{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-bottom:38px}.feature{border:1px solid #30343e;border-radius:28px;background:linear-gradient(135deg,#171a20,#111318);padding:28px;min-height:245px;position:relative;overflow:hidden}.feature:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-80px;bottom:-100px;background:rgba(199,243,107,.07)}.feature .bigdate{font:600 74px/.8 "Space Grotesk";letter-spacing:-.07em;color:#fff}.feature .day{color:var(--lime);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-top:12px}.feature h3{font:600 25px "Space Grotesk";margin:28px 0 5px}.feature .speaker{color:#a8aeb9;font-size:13px}.mini-stat{display:grid;grid-template-columns:1fr 1fr;gap:14px}.metric{border:1px solid #282b34;background:#111217;border-radius:24px;padding:22px}.metric strong{font:600 39px "Space Grotesk";display:block}.metric span{color:#777d89;font-size:11px;text-transform:uppercase;letter-spacing:.12em}.metric.accent strong{color:var(--lime)}.metric.blue strong{color:var(--blue)}
+.timeline{position:relative;margin-top:18px}.timeline:before{content:"";position:absolute;left:13px;top:12px;bottom:12px;width:1px;background:#2a2d34}.event{position:relative;padding-left:45px;margin-bottom:14px}.event-dot{position:absolute;left:7px;top:22px;width:14px;height:14px;border-radius:50%;border:4px solid var(--bg);z-index:2}.event-card{background:#111217;border:1px solid #252832;border-radius:21px;padding:16px 17px;display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:15px;transition:.2s}.event-card:hover{border-color:#444955;transform:translateX(3px)}.date{font:600 23px "Space Grotesk"}.date small{display:block;color:#777d89;font:700 9px "DM Sans";letter-spacing:.13em;margin-top:4px}.event-info strong{font-size:13px}.event-info span{display:block;color:#777d89;font-size:11px;margin-top:4px}.names{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px;max-width:300px}.person-pill{border:1px solid #2a2d34;background:#191b21;color:#b4b8c1;padding:5px 8px;border-radius:9px;font-size:10px}
+.people-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.person{background:#111217;border:1px solid #292c34;border-radius:25px;padding:22px;min-height:190px;transition:.2s}.person:hover{transform:translateY(-3px);border-color:#444955}.avatar{width:48px;height:48px;border-radius:16px;background:#1c2028;display:grid;place-items:center;color:var(--lime);font:700 16px "Space Grotesk";margin-bottom:20px}.person h3{font:600 16px "Space Grotesk";margin:0}.person .role{color:#707681;font-size:10px;text-transform:uppercase;letter-spacing:.13em;margin-top:5px}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:17px}.chip{font-size:10px;padding:6px 8px;background:#191b21;border:1px solid #282b34;color:#9da2ad;border-radius:8px}
+.leaders{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.leader{border:1px solid #282b34;background:#111217;border-radius:20px;padding:17px;display:flex;gap:13px;align-items:center}.leader-icon{width:43px;height:43px;border-radius:14px;background:#1b1e25;display:grid;place-items:center;color:var(--blue);flex-shrink:0}.leader small{display:block;color:#707681;text-transform:uppercase;letter-spacing:.12em;font-size:9px;font-weight:700;margin-bottom:4px}.leader strong{font-size:12px;line-height:1.35}
+.hidden{display:none!important}.empty{padding:65px 20px;text-align:center;border:1px dashed #2c3038;border-radius:25px;color:#6f7580}.empty svg{margin:auto}.empty p{font-size:13px}
+.mobile-nav{display:none}
+@media(max-width:850px){
+ .shell{padding:0 17px}.top{min-height:390px}.top-inner{padding-top:18px}.status{display:none}.hero{padding:62px 0 75px}.hero h1{font-size:51px}.hero p{font-size:14px}
+ .command{margin-top:-34px}.command-bar{grid-template-columns:1fr;border-radius:21px}.actions{border-top:1px solid #252832;padding-top:7px;margin-top:2px;display:grid;grid-template-columns:repeat(3,1fr)}.tab{justify-content:center;padding:12px 5px}
+ .content{padding-top:34px}.view-head{align-items:start}.view-head h2{font-size:25px}.next{grid-template-columns:1fr}.mini-stat{grid-template-columns:repeat(3,1fr)}.metric{padding:15px}.metric strong{font-size:28px}.metric span{font-size:8px}
+ .feature{min-height:235px}.feature .bigdate{font-size:64px}.event-card{grid-template-columns:58px 1fr}.names{grid-column:2;justify-content:flex-start}.people-grid{grid-template-columns:1fr 1fr}.leaders{grid-template-columns:1fr}
+}
+@media(max-width:540px){
+ body{padding-bottom:76px}.brandmark span{font-size:12px}.hero h1{font-size:45px}.hero p{max-width:330px}.mini-stat{gap:7px}.metric{border-radius:17px;padding:13px 10px}.metric strong{font-size:25px}.feature{padding:22px;border-radius:23px}.feature h3{margin-top:24px;font-size:21px}
+ .event{padding-left:31px}.timeline:before{left:7px}.event-dot{left:1px}.event-card{padding:14px;gap:10px;border-radius:18px}.date{font-size:20px}.names{grid-column:2}.people-grid{grid-template-columns:1fr}.person{min-height:auto}.mobile-nav{display:grid;position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(13,14,18,.92);backdrop-filter:blur(20px);border-top:1px solid #292c34;padding:8px 10px calc(8px + env(safe-area-inset-bottom));grid-template-columns:repeat(3,1fr);gap:5px}.mobile-nav button{border:0;background:none;color:#6f7580;border-radius:14px;padding:7px 3px;font-size:9px;font-weight:700}.mobile-nav button.active{background:#f4f4f5;color:#111}.mobile-nav i{display:block;margin:auto auto 3px;width:18px;height:18px}
+}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased p-4 md:p-8">
+<body>
+<header class="top">
+ <div class="shell top-inner">
+  <div class="brand"><div class="brandmark"><b>✦</b><span>IGREJA / CENTRAL</span></div><div class="status"><i class="dot"></i> SISTEMA ATIVO</div></div>
+  <div class="hero">
+   <div class="eyebrow">Painel de liderança · Outubro 2026</div>
+   <h1 class="display">Tudo que<br>move a igreja.</h1>
+   <p>Uma visão viva da agenda, das pessoas e dos ministérios — feita para encontrar o que você precisa em poucos segundos.</p>
+  </div>
+ </div>
+</header>
 
-    <div class="max-w-5xl mx-auto">
-        <!-- Cabeçalho -->
-        <header class="mb-8 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
-            <div>
-                <h1 class="text-3xl font-bold text-slate-800 tracking-tight">Gestão da Igreja 2026</h1>
-                <p class="text-slate-500 mt-1">Planeamento, Escalas e Liderança</p>
-            </div>
-            
-            <nav class="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar">
-                <button onclick="setView('escala')" id="nav-escala" class="nav-btn active pb-2 font-semibold transition-all whitespace-nowrap">Escala de Cultos</button>
-                <button onclick="setView('departamentos')" id="nav-departamentos" class="nav-btn pb-2 font-semibold transition-all whitespace-nowrap">Áreas (Anciãos)</button>
-                <button onclick="setView('oficiais')" id="nav-oficiais" class="nav-btn pb-2 font-semibold transition-all whitespace-nowrap">Oficiais / Líderes</button>
-            </nav>
-        </header>
+<div class="shell command">
+ <div class="command-bar">
+  <label class="search"><i data-lucide="command" width="18"></i><input id="search" placeholder="Buscar pessoa, culto ou ministério..." autocomplete="off"></label>
+  <div class="actions">
+   <button class="tab active" id="tab-escala" onclick="setView('escala')"><i data-lucide="zap" width="14"></i>Agenda</button>
+   <button class="tab" id="tab-departamentos" onclick="setView('departamentos')"><i data-lucide="users" width="14"></i>Pessoas</button>
+   <button class="tab" id="tab-oficiais" onclick="setView('oficiais')"><i data-lucide="layers" width="14"></i>Ministérios</button>
+  </div>
+ </div>
+</div>
 
-        <!-- Escala de Cultos -->
-        <div id="section-escala">
-            <div class="flex flex-col md:flex-row gap-4 mb-6">
-                <div class="relative flex-grow">
-                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                    <input 
-                        type="text" 
-                        id="searchInputEscala"
-                        placeholder="Pesquisar ancião ou orador..." 
-                        class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm"
-                    >
-                </div>
-                
-                <div class="flex items-center bg-white rounded-xl border border-slate-200 p-1 shadow-sm overflow-hidden" id="monthTabs">
-                    <button onclick="changeMonth(0)" class="month-btn active px-6 py-2 text-sm font-bold rounded-lg transition-all">Outubro</button>
-                </div>
-            </div>
+<main class="shell content">
+<section id="view-escala">
+ <div class="view-head"><div><div class="kicker">Agenda operacional</div><h2>O que vem por aí</h2></div><div class="month">OUT · 2026</div></div>
+ <div id="next"></div>
+ <div class="timeline" id="timeline"></div>
+</section>
 
-            <div class="flex flex-wrap gap-4 mb-6 text-xs font-bold uppercase tracking-wider text-slate-500 px-2">
-                <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-blue-500"></div> Quarta-feira</div>
-                <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-emerald-500"></div> Sábado</div>
-                <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-rose-500"></div> Domingo</div>
-            </div>
+<section id="view-departamentos" class="hidden">
+ <div class="view-head"><div><div class="kicker">Liderança</div><h2>Quem cuida do quê</h2></div><div class="month" id="peopleCount">12 anciãos</div></div>
+ <div class="people-grid" id="people"></div>
+</section>
 
-            <div id="scheduleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-        </div>
+<section id="view-oficiais" class="hidden">
+ <div class="view-head"><div><div class="kicker">Estrutura</div><h2>Mapa de ministérios</h2></div><div class="month" id="leaderCount">26 líderes</div></div>
+ <div class="leaders" id="leaders"></div>
+</section>
+</main>
 
-        <!-- Áreas de Atuação -->
-        <div id="section-departamentos" class="hidden">
-            <div class="mb-6 relative">
-                <i data-lucide="filter" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                <input 
-                    type="text" 
-                    id="searchInputDepto"
-                    placeholder="Filtrar ancião ou área de atuação..." 
-                    class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm"
-                >
-            </div>
-            <div id="deptoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-        </div>
+<nav class="mobile-nav">
+ <button id="m-escala" class="active" onclick="setView('escala')"><i data-lucide="zap"></i>Agenda</button>
+ <button id="m-departamentos" onclick="setView('departamentos')"><i data-lucide="users"></i>Pessoas</button>
+ <button id="m-oficiais" onclick="setView('oficiais')"><i data-lucide="layers"></i>Ministérios</button>
+</nav>
 
-        <!-- Oficiais -->
-        <div id="section-oficiais" class="hidden">
-            <div class="mb-6 relative">
-                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                <input 
-                    type="text" 
-                    id="searchInputOficiais"
-                    placeholder="Buscar líder ou departamento..." 
-                    class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none shadow-sm"
-                >
-            </div>
-            <div id="oficiaisGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-        </div>
+<script>
+const scheduleData=[
 
-        <footer class="mt-12 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
-            <p>© 2026 Gestão Eclesiástica • Secretaria da Igreja</p>
-            <div class="flex flex-wrap justify-center gap-6 mt-4">
-                <div class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-blue-500"></i> Liderança Ativa</div>
-                <div class="flex items-center gap-1.5"><i data-lucide="award" class="w-4 h-4 text-amber-500"></i> Oficiais 2026</div>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        const months = ["Outubro"];
-        let activeMonth = 0;
-        let activeView = 'escala';
-        let searchEscala = "";
-        let searchDepto = "";
-        let searchOficiais = "";
-
-        const scheduleData = [
             // OUTUBRO 2026
             { date: "03/10", day: "SAB", names: ["Sidney Trindade Paixão", "Anderson Gaspar Cipriano"], month: 0, orador: "Dr. Jackson Valoni", info: "Culto Divino / Culto Jovem" },
             { date: "04/10", day: "DOM", names: ["Evanildo Silva Andrade Filho", "José Luiz da Silva"], month: 0, orador: "Pr Robson Menezes", info: "Culto Noturno" },
@@ -146,9 +108,9 @@
             { date: "25/10", day: "DOM", names: ["Vladimir de Paula", "Deivison Coelho Miguel"], month: 0, orador: "Pr. Robson Menezes", info: "Culto Noturno" },
             { date: "28/10", day: "QUA", names: ["Sidney Trindade Paixão"], month: 0, orador: "Min da Mulher", info: "M. da Mulher" },
             { date: "31/10", day: "SAB", names: ["Sidney Trindade Paixão", "Evanildo Silva Andrade Filho"], month: 0, orador: "Marcia Aparecida", info: "Culto Divino / Culto Jovem" }
-        ];
+];
+const eldersData=[
 
-        const eldersData = [
             { name: "Felipe Ferreira Coimbra", deptos: ["Vida Plena", "Sonoplastia/Transmissão", "Saúde"], color: "blue" },
             { name: "Eliza de Jesus Rosa", deptos: ["Jovens", "Recepção"], color: "purple" },
             { name: "Marcio Roberto Brandão", deptos: ["Tesouraria", "ASA"], color: "emerald" },
@@ -161,9 +123,9 @@
             { name: "Patrícia Miguel dos Santos", deptos: ["Min. da Mulher", "Min. da Família"], color: "pink" },
             { name: "Vitor Bruno do Nascimento", deptos: ["Min. Criança", "Possibilidades"], color: "sky" },
             { name: "Vladimir de Paula", deptos: ["Mordomia", "Escola Sabatina"], color: "violet" }
-        ];
+];
+const oficiaisData=[
 
-        const oficiaisData = [
             { depto: "Diácono Chefe", nome: "Luiz Albuquerque Silva", icon: "user-check" },
             { depto: "Diaconisa Chefe", nome: "Maria Raílda Silva de Oliveira", icon: "user-check" },
             { depto: "Secretaria", nome: "Célia Valentina Mattos da Silva", icon: "file-text" },
@@ -191,166 +153,70 @@
             { depto: "Comunicação", nome: "Luiz Felipe Mattos da Silva", icon: "megaphone" },
             { depto: "MAP (Possibilidades)", nome: "Elisangela Moreira dos Santos Pintor", icon: "accessibility" },
             { depto: "Publicações", nome: "Célia Valentina Mattos da Silva", icon: "book" }
-        ];
+];
 
-        // SVG personalizado para garantir que o ícone de oração nunca falhe
-        const prayerHandsSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-prayer"><path d="m18 8-4-4-4 4M10 16l4 4 4-4M4 8l4-4 4 4M8 16l4 4 4-4"/></svg>`;
+let view="escala",query="";
+const colors={QUA:"#6ea8ff",SAB:"#c7f36b",DOM:"#ff718d"};
 
-        function getDayStyle(day) {
-            switch (day) {
-                case 'QUA': return 'bg-blue-100 text-blue-700 border-blue-200';
-                case 'SAB': return 'bg-emerald-100 text-emerald-700 border-emerald-200';
-                case 'DOM': return 'bg-rose-100 text-rose-700 border-rose-200';
-                default: return 'bg-gray-100 text-gray-700 border-gray-200';
-            }
-        }
-
-        function setView(view) {
-            activeView = view;
-            document.getElementById('section-escala').classList.toggle('hidden', view !== 'escala');
-            document.getElementById('section-departamentos').classList.toggle('hidden', view !== 'departamentos');
-            document.getElementById('section-oficiais').classList.toggle('hidden', view !== 'oficiais');
-            
-            document.getElementById('nav-escala').classList.toggle('active', view === 'escala');
-            document.getElementById('nav-departamentos').classList.toggle('active', view === 'departamentos');
-            document.getElementById('nav-oficiais').classList.toggle('active', view === 'oficiais');
-            
-            render();
-        }
-
-        function render() {
-            if (activeView === 'escala') renderSchedule();
-            else if (activeView === 'departamentos') renderDepartments();
-            else renderOfficials();
-            lucide.createIcons();
-        }
-
-        function renderSchedule() {
-            const grid = document.getElementById('scheduleGrid');
-            const filtered = scheduleData.filter(item => {
-                const matchesMonth = item.month === activeMonth;
-                const matchesSearch = !searchEscala || 
-                    item.names.some(n => n.toLowerCase().includes(searchEscala.toLowerCase())) ||
-                    item.orador.toLowerCase().includes(searchEscala.toLowerCase()) ||
-                    (item.info && item.info.toLowerCase().includes(searchEscala.toLowerCase()));
-                return matchesMonth && matchesSearch;
-            });
-
-            grid.innerHTML = filtered.map(item => `
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
-                    <div class="flex items-center gap-3 p-4 bg-slate-50/50 border-b border-slate-100">
-                        <div class="w-12 h-12 rounded-xl flex flex-col items-center justify-center border font-bold ${getDayStyle(item.day)} shadow-sm">
-                            <span class="text-[10px] uppercase opacity-80 leading-none mb-1">${item.day}</span>
-                            <span class="text-lg leading-none">${item.date.split('/')[0]}</span>
-                        </div>
-                        <div class="flex-grow">
-                            <p class="font-bold text-slate-700 text-sm leading-tight">${item.info || 'Culto de Rotina'}</p>
-                            <p class="text-[10px] text-slate-400 font-medium uppercase tracking-tighter">${months[activeMonth]} • 2026</p>
-                        </div>
-                    </div>
-                    <div class="p-4 space-y-4">
-                        <div>
-                            <div class="flex items-center gap-2 mb-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                                <i data-lucide="mic-2" class="w-3 h-3"></i> Orador
-                            </div>
-                            <p class="text-sm font-semibold text-blue-700">${item.orador}</p>
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-2 mb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                                <i data-lucide="users" class="w-3 h-3"></i> Anciãos
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                ${item.names.map(name => `
-                                    <span class="px-2 py-1 bg-slate-50 text-slate-600 rounded-lg text-xs font-medium border border-slate-100 flex items-center gap-1">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
-                                        ${name}
-                                    </span>
-                                `).join('')}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderDepartments() {
-            const grid = document.getElementById('deptoGrid');
-            const filtered = eldersData.filter(elder => 
-                elder.name.toLowerCase().includes(searchDepto.toLowerCase()) || 
-                elder.deptos.some(d => d.toLowerCase().includes(searchDepto.toLowerCase()))
-            );
-
-            grid.innerHTML = filtered.map(elder => `
-                <div class="rounded-2xl shadow-sm hover:shadow-lg transition-all overflow-hidden border border-slate-200 elder-card-${elder.color} group">
-                    <div class="p-5">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex flex-col">
-                                <h3 class="font-bold text-lg text-slate-800 leading-tight">${elder.name}</h3>
-                                <span class="text-[10px] text-slate-400 font-bold uppercase mt-1">Ancião</span>
-                            </div>
-                            <div class="p-3 bg-white/80 rounded-xl group-hover:scale-110 transition-transform shadow-sm">
-                                <i data-lucide="shield-check" class="w-6 h-6 text-slate-600"></i>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest border-b border-slate-200/50 pb-2">Ministérios e Departamentos</p>
-                            <div class="flex flex-wrap gap-2">
-                                ${elder.deptos.map(d => `
-                                    <span class="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-xs font-bold border border-slate-200 shadow-sm hover:border-blue-300 transition-colors">
-                                        ${d}
-                                    </span>
-                                `).join('')}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderOfficials() {
-            const grid = document.getElementById('oficiaisGrid');
-            const filtered = oficiaisData.filter(item => 
-                item.nome.toLowerCase().includes(searchOficiais.toLowerCase()) || 
-                item.depto.toLowerCase().includes(searchOficiais.toLowerCase())
-            );
-
-            grid.innerHTML = filtered.map(item => `
-                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4 hover:border-blue-400 hover:bg-blue-50/20 transition-all group">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors shadow-inner">
-                        ${item.icon === 'prayer-hands-svg' ? prayerHandsSvg : `<i data-lucide="${item.icon || 'star'}" class="w-5 h-5 text-blue-600"></i>`}
-                    </div>
-                    <div>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5 leading-none">${item.depto}</p>
-                        <h4 class="font-bold text-slate-800 leading-tight">${item.nome}</h4>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function changeMonth(idx) {
-            activeMonth = idx;
-            document.querySelectorAll('.month-btn').forEach((btn, i) => {
-                btn.classList.toggle('active', i === idx);
-            });
-            render();
-        }
-
-        document.getElementById('searchInputEscala').addEventListener('input', (e) => {
-            searchEscala = e.target.value;
-            render();
-        });
-
-        document.getElementById('searchInputDepto').addEventListener('input', (e) => {
-            searchDepto = e.target.value;
-            render();
-        });
-
-        document.getElementById('searchInputOficiais').addEventListener('input', (e) => {
-            searchOficiais = e.target.value;
-            render();
-        });
-
-        window.onload = render;
-    </script>
+function initials(name){return name.split(" ").filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase()}
+function setView(v){
+ view=v;
+ ["escala","departamentos","oficiais"].forEach(x=>{
+  document.getElementById("view-"+x).classList.toggle("hidden",x!==v);
+  document.getElementById("tab-"+x).classList.toggle("active",x===v);
+  document.getElementById("m-"+x).classList.toggle("active",x===v);
+ });
+ query="";document.getElementById("search").value="";
+ render();lucide.createIcons();window.scrollTo({top:0,behavior:"smooth"});
+}
+function filteredSchedule(){
+ let q=query.toLowerCase();
+ return scheduleData.filter(x=>!q||x.names.some(n=>n.toLowerCase().includes(q))||x.orador.toLowerCase().includes(q)||x.info.toLowerCase().includes(q));
+}
+function renderSchedule(){
+ const data=filteredSchedule(),first=data[0];
+ const next=document.getElementById("next");
+ if(!data.length){next.innerHTML=`<div class="empty"><i data-lucide="search-x"></i><p>Nenhum evento encontrado.</p></div>`;document.getElementById("timeline").innerHTML="";return}
+ next.innerHTML=`<div class="next">
+  <article class="feature">
+   <div class="kicker">Próximo compromisso</div>
+   <div class="bigdate">${first.date.split("/")[0]}</div>
+   <div class="day">${first.day} · Outubro</div>
+   <h3>${first.info}</h3><div class="speaker"><i data-lucide="mic-2" width="13" style="vertical-align:-2px"></i> ${first.orador}</div>
+  </article>
+  <div class="mini-stat">
+   <div class="metric accent"><strong>${scheduleData.length}</strong><span>cultos</span></div>
+   <div class="metric blue"><strong>${eldersData.length}</strong><span>anciãos</span></div>
+   <div class="metric"><strong>${new Set(scheduleData.flatMap(x=>x.names)).size}</strong><span>escalados</span></div>
+  </div>
+ </div>`;
+ document.getElementById("timeline").innerHTML=data.map((x,i)=>`
+ <article class="event">
+  <i class="event-dot" style="background:${colors[x.day]||"#aaa"}"></i>
+  <div class="event-card">
+   <div class="date">${x.date.split("/")[0]}<small>${x.day}</small></div>
+   <div class="event-info"><strong>${x.info}</strong><span>${x.orador}</span></div>
+   <div class="names">${x.names.map(n=>`<span class="person-pill">${n}</span>`).join("")}</div>
+  </div>
+ </article>`).join("");
+}
+function renderPeople(){
+ let q=query.toLowerCase(),data=eldersData.filter(x=>!q||x.name.toLowerCase().includes(q)||x.deptos.some(d=>d.toLowerCase().includes(q)));
+ document.getElementById("peopleCount").textContent=data.length+" anciãos";
+ document.getElementById("people").innerHTML=data.length?data.map(x=>`<article class="person">
+  <div class="avatar">${initials(x.name)}</div><h3>${x.name}</h3><div class="role">Ancião</div>
+  <div class="chips">${x.deptos.map(d=>`<span class="chip">${d}</span>`).join("")}</div>
+ </article>`).join(""):`<div class="empty" style="grid-column:1/-1"><i data-lucide="search-x"></i><p>Nenhuma pessoa encontrada.</p></div>`;
+}
+function renderLeaders(){
+ let q=query.toLowerCase(),data=oficiaisData.filter(x=>!q||x.nome.toLowerCase().includes(q)||x.depto.toLowerCase().includes(q));
+ document.getElementById("leaderCount").textContent=data.length+" líderes";
+ document.getElementById("leaders").innerHTML=data.length?data.map(x=>`<article class="leader"><div class="leader-icon"><i data-lucide="${x.icon==="prayer-hands-svg"?"heart-handshake":(x.icon||"star")}" width="18"></i></div><div><small>${x.depto}</small><strong>${x.nome}</strong></div></article>`).join(""):`<div class="empty" style="grid-column:1/-1"><i data-lucide="search-x"></i><p>Nenhum ministério encontrado.</p></div>`;
+}
+function render(){if(view==="escala")renderSchedule();else if(view==="departamentos")renderPeople();else renderLeaders();lucide.createIcons()}
+document.getElementById("search").addEventListener("input",e=>{query=e.target.value;render()});
+document.getElementById("leaderCount").textContent=oficiaisData.length+" líderes";
+window.onload=render;
+</script>
 </body>
 </html>
