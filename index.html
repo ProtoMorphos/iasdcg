@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#09090b">
-<title>IASD Campo Grande • 24/10</title>
+<title>IASD Campo Grande • 31/10</title>
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
@@ -16,7 +16,7 @@
 radial-gradient(circle at 78% 15%,rgba(110,168,255,.18),transparent 24rem),
 radial-gradient(circle at 8% 70%,rgba(199,243,107,.08),transparent 23rem),
 linear-gradient(135deg,#0b0c10,#0a0b0e 52%,#10141c);border-bottom:1px solid #20232b;position:relative;overflow:hidden}
-.top:after{content:"24/10";position:absolute;right:-25px;bottom:-80px;font:800 240px/1 "Space Grotesk";color:rgba(255,255,255,.025);letter-spacing:-.08em}
+.top:after{content:"31/10";position:absolute;right:-25px;bottom:-80px;font:800 240px/1 "Space Grotesk";color:rgba(255,255,255,.025);letter-spacing:-.08em}
 .top-inner{position:relative;z-index:2;padding-top:26px}
 .brand{display:flex;align-items:center;justify-content:space-between}
 .brandmark{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.02em}.brandmark b{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--lime);color:#111}
@@ -63,7 +63,7 @@ linear-gradient(135deg,#0b0c10,#0a0b0e 52%,#10141c);border-bottom:1px solid #202
  <div class="shell top-inner">
   <div class="brand"><div class="brandmark"><b>✦</b><span>IGREJA / CAMPO GRANDE</span></div><div class="status"><i class="dot"></i> SISTEMA ATIVO</div></div>
   <div class="hero">
-   <div class="eyebrow">Programação Oficial · 24 de Outubro</div>
+   <div class="eyebrow">Programação Oficial · 31 de Outubro</div>
    <h1 class="display">Tudo que<br>move o sábado.</h1>
    <p>Uma visão viva da agenda, das equipes de plantão e ministérios da música e multimídia — feita para encontrar o que você precisa em segundos.</p>
   </div>
@@ -83,7 +83,7 @@ linear-gradient(135deg,#0b0c10,#0a0b0e 52%,#10141c);border-bottom:1px solid #202
 
 <main class="shell content">
 <section id="view-escala">
- <div class="view-head"><div><div class="kicker">Cronograma</div><h2>Agenda do Sábado</h2></div><div class="month">24 OUT</div></div>
+ <div class="view-head"><div><div class="kicker">Cronograma</div><h2>Agenda do Sábado</h2></div><div class="month">31 OUT</div></div>
  <div id="next"></div>
  <div class="timeline" id="timeline"></div>
 </section>
@@ -107,39 +107,44 @@ linear-gradient(135deg,#0b0c10,#0a0b0e 52%,#10141c);border-bottom:1px solid #202
 
 <script>
 const scheduleData = [
-    { time: "09:00", category: "CULTO DIVINO", names: ["Marcio Brandão"], title: "Boas-vindas & Oração", subtitle: "" },
-    { time: "09:05", category: "CULTO DIVINO", names: ["Luiz Felipe", "Pedro"], title: "Anúncios", subtitle: "" },
-    { time: "09:10", category: "CULTO DIVINO", names: ["Tia Marcia"], title: "Adoração Infantil", subtitle: "" },
-    { time: "09:20", category: "CULTO DIVINO", names: ["Giulia dos Santos"], title: "Louvor especial", subtitle: "" },
-    { time: "09:25", category: "CULTO DIVINO", names: ["Rebeca"], title: "Momento de Entrega", subtitle: "Ofertório e Intercessora | Louvores: Digno de Louvor / Não há o que temer / Verei Jesus" },
-    { time: "09:55", category: "CULTO DIVINO", names: ["Pr. Patrick Marlon"], title: "Mensagem do Dia", subtitle: "Tema: O Grande Conflito" },
-    { time: "10:40", category: "CULTO DIVINO", names: ["Giulia dos Santos"], title: "Louvor de Apelo", subtitle: "" },
-    { time: "10:45", category: "CULTO DIVINO", names: ["Pr. Patrick Marlon"], title: "Apelo e Oração", subtitle: "" },
-    { time: "10:47", category: "CULTO DIVINO", names: ["Gaspar"], title: "Orientações de saída", subtitle: "" },
+    { time: "09:00", category: "CULTO DIVINO", names: ["A confirmar"], title: "Boas-vindas & Oração", subtitle: "" },
+    { time: "09:05", category: "CULTO DIVINO", names: ["A confirmar"], title: "Anúncios", subtitle: "" },
+    { time: "09:10", category: "CULTO DIVINO", names: ["A confirmar"], title: "Momento de Entrega", subtitle: "Ofertório e Intercessora | Louvores: Eu Creio, Eu sei em Quem eu creio, Em Ti" },
+    { time: "09:40", category: "CULTO DIVINO", names: ["Marcia Aparecida"], title: "Mensagem do Dia", subtitle: "Tema: Presente do Paraíso" },
+    { time: "10:30", category: "CULTO DIVINO", names: ["Laysa"], title: "Música de Apelo", subtitle: "" },
+    { time: "10:35", category: "CULTO DIVINO", names: ["A confirmar"], title: "Apelo e Oração", subtitle: "" },
+    { time: "10:40", category: "CULTO DIVINO", names: ["A confirmar"], title: "Apresentação de Bebê", subtitle: "Duração estimada: 20 min" },
+    { time: "11:00", category: "CULTO DIVINO", names: ["A confirmar"], title: "Leitura da Ata", subtitle: "Duração estimada: 10 min" },
+    { time: "11:10", category: "CULTO DIVINO", names: ["A confirmar"], title: "Orientações de saída", subtitle: "" },
     
-    { time: "10:55", category: "ESCOLA SABATINA", names: ["Daniel"], title: "Boas-vindas & Oração", subtitle: "" },
-    { time: "10:57", category: "ESCOLA SABATINA", names: ["Ministério de Louvor"], title: "Louvores", subtitle: "Hinos: 45 - Suave Espírito e 55 - Tua Palavra" },
-    { time: "11:05", category: "ESCOLA SABATINA", names: [""], title: "Informativo Mundial", subtitle: "Vídeo" },
-    { time: "11:10", category: "ESCOLA SABATINA", names: [""], title: "Minutos Missionários", subtitle: "A confirmar" },
-    { time: "11:15", category: "ESCOLA SABATINA", names: ["Luis Fernando"], title: "Recapitulando a Lição", subtitle: "" },
-    { time: "12:00", category: "ESCOLA SABATINA", names: ["Railda"], title: "Encerramento", subtitle: "" }
+    { time: "11:15", category: "ESCOLA SABATINA", names: ["Vladimir"], title: "Abertura & Oração", subtitle: "" },
+    { time: "11:17", category: "ESCOLA SABATINA", names: ["Ministério de Louvor"], title: "Louvores", subtitle: "48 - O poder do Espírito | 56 - Nossa Inspiração" },
+    { time: "11:25", category: "ESCOLA SABATINA", names: [""], title: "Informativo Mundial", subtitle: "Vídeo" },
+    { time: "11:30", category: "ESCOLA SABATINA", names: [""], title: "Momento Missionário", subtitle: "" },
+    { time: "11:35", category: "ESCOLA SABATINA", names: ["Railda"], title: "Introdução da Lição", subtitle: "" },
+    { time: "12:10", category: "ESCOLA SABATINA", names: ["Fernando"], title: "Encerramento e Oração Final", subtitle: "" }
 ];
 
 const equipesGroups = [
     { 
         title: "Oficiantes & Anciãos", 
         icon: "user-check", 
-        content: "<p><strong>Anciãos de Plantão:</strong> Gaspar, Marcio Brandão</p>" 
+        content: "<p><strong>Anciãos de Plantão:</strong> A confirmar</p>" 
     },
     { 
         title: "Recepção", 
         icon: "heart-handshake", 
-        content: "<p><strong>Equipe:</strong> Nely, Natanael e David</p>" 
+        content: "<p><strong>Equipe:</strong> Elias, Lizete e Eliana</p>" 
     },
     { 
         title: "Diaconato", 
         icon: "shield-check", 
-        content: "<p><strong>Diáconos:</strong> Marcos Maravilha (Coordenador), Julio Cesar, Marcelo Maravilha, Eduardo Santos</p><p><strong>Diaconisas:</strong> Sueli, Ceia e Railda</p>" 
+        content: "<p><strong>Diáconos:</strong> Jorge Veríssimo (Coordenador), José Luiz, Marcos Paulino e Luiz Albuquerque</p><p><strong>Diaconisas:</strong> Letícia, Rosa Maravilha e Zilda</p>" 
+    },
+    { 
+        title: "Comunicação", 
+        icon: "megaphone", 
+        content: "<p><strong>Equipe:</strong> Luiz Felipe e Renata</p>" 
     }
 ];
 
@@ -148,22 +153,31 @@ const midiaGroups = [
         title: "Equipe de Louvor", 
         icon: "mic-2", 
         theme: "blue-theme",
-        content: "<p><strong>Ministração:</strong> Victor Elias</p><p><strong>Sopranos:</strong> Hadassa e Ana Luísa</p><p><strong>Contraltos:</strong> Iale</p><p><strong>Tenor:</strong> Max</p>" 
+        content: "<p><strong>Ministração / Soprano:</strong> Patrícia</p><p><strong>Soprano:</strong> Laysa</p><p><strong>Contralto:</strong> Iale</p><p><strong>Tenor:</strong> Elisama</p><p><strong>Barítono:</strong> Luiz Felipe</p><p><strong>Louvores:</strong> Eu Creio, Eu sei em Quem eu creio, Em Ti</p>" 
     },
     { 
         title: "Banda Instrumental", 
         icon: "music-4", 
         theme: "blue-theme",
-        content: "<p><strong>Piano:</strong> Rafael</p><p><strong>Violão:</strong> Henrique</p><p><strong>Guitarra:</strong> Anderson</p><p><strong>Contrabaixo:</strong> Marcos</p><p><strong>Bateria:</strong> Josué</p>" 
+        content: "<p><strong>Piano:</strong> Emanuely</p><p><strong>Violão:</strong> Henrique</p><p><strong>Guitarra:</strong> Ananias</p><p><strong>Contrabaixo:</strong> A confirmar</p><p><strong>Bateria:</strong> Nathan</p>" 
     },
     { 
         title: "Equipe de Multimídia", 
         icon: "monitor-play", 
         theme: "blue-theme",
-        content: `<div class="tech-list">
+        content: `<p style="font-size:12px; color:var(--blue); font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">Turno: Sexta 30/10 - 19h</p>
+                  <div class="tech-list" style="margin-bottom: 12px;">
+                    <div class="tech-item"><span>PC / Projeção</span>Gabi</div>
                     <div class="tech-item"><span>Mesa de Som</span>Gabriel</div>
-                    <div class="tech-item"><span>PC / Projeção</span>Isabela</div>
-                    <div class="tech-item"><span>Transmissão Live</span>Adão e Renan</div>
+                    <div class="tech-item"><span>Suporte</span>Pedro</div>
+                  </div>
+                  <p style="font-size:12px; color:var(--blue); font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">Turno: Sábado 31/10 - 8h</p>
+                  <div class="tech-list">
+                    <div class="tech-item"><span>Mesa de Som</span>Isabela</div>
+                    <div class="tech-item"><span>PC / Projeção</span>Elliam</div>
+                    <div class="tech-item"><span>Transmissão Live</span>Pedro</div>
+                    <div class="tech-item"><span>Câmeras</span>Gabriel</div>
+                    <div class="tech-item"><span>Suporte</span>Renan</div>
                   </div>` 
     }
 ];
@@ -195,14 +209,14 @@ function renderSchedule(){
  next.innerHTML=`<div class="next">
   <article class="feature">
    <div class="kicker">Mensagem Principal</div>
-   <div class="bigdate">O Grande Conflito</div>
-   <div class="day">Pr. Patrick Marlon</div>
-   <h3>Culto Divino</h3><div class="speaker"><i data-lucide="clock" width="13" style="vertical-align:-2px"></i> 09h55</div>
+   <div class="bigdate">Presente do Paraíso</div>
+   <div class="day">Oradora Marcia Aparecida</div>
+   <h3>Culto Divino</h3><div class="speaker"><i data-lucide="clock" width="13" style="vertical-align:-2px"></i> 09h40</div>
   </article>
   <div class="mini-stat">
    <div class="metric accent"><strong>${scheduleData.length}</strong><span>atividades</span></div>
-   <div class="metric blue"><strong>12</strong><span>oficiais</span></div>
-   <div class="metric"><strong>13</strong><span>louvor/mídia</span></div>
+   <div class="metric blue"><strong>10</strong><span>oficiais</span></div>
+   <div class="metric"><strong>18</strong><span>louvor/mídia</span></div>
   </div>
  </div>`;
 
